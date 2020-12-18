@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import './Header.css';
-import Logo from '../../component/Logo/Logo';
-import Navigations from '../../component/Navigations/Navigations';
+import Logo from '../../components/Logo/Logo';
+import Navigations from '../../components/Navigations/Navigations';
 
 class Header extends Component{
     render(){
@@ -10,6 +10,8 @@ class Header extends Component{
             <div className='Header'>
                 <Logo/>
                 <Navigations/>
+                <div>github link</div>
+                <div>TMDB reference</div>
             </div>
         );
     };
