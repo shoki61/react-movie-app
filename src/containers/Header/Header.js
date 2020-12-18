@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import {FaGithub} from 'react-icons/fa';
 
 import './Header.css';
 import Logo from '../../components/Logo/Logo';
 import Navigations from '../../components/Navigations/Navigations';
+import Link from '../../components/UI/Link/Link';
 
 class Header extends Component{
     render(){
@@ -10,8 +12,12 @@ class Header extends Component{
             <div className='Header'>
                 <Logo/>
                 <Navigations/>
-                <div>github link</div>
-                <div>TMDB reference</div>
+                <Link title='Github Repository' size={23} color='#414141' url='https://github.com/shoki61/react-movie-app'>
+                    <FaGithub/>
+                </Link>
+                <Link>
+                    TMDB
+                </Link>
             </div>
         );
     };
