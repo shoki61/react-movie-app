@@ -5,7 +5,7 @@
 
 .Logo p{
     margin:0;
-    color: #4a4a4a
+    color: #ff0092
 }
 .Logo img{
     height: 45px;
@@ -14,9 +14,11 @@
 
 .Logo-Name{
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Acme', sans-serif;
 }
 
 .App-Name{
     font-size: 13px;
+    font-family:'Acme', sans-serif;
 }
