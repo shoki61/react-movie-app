@@ -17,7 +17,7 @@ class Header extends Component{
                     <Logo/>
                     <Navigations/>
                     <div style={{display:'flex',alignItems:'center'}}>
-                        <Input inputType='Search-Input' placeholder='Search'/>
+                        <Input inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
                         <Button btnType='Search-Button'>
                             <IoIosSearch/>
                         </Button>
