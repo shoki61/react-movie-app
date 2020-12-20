@@ -14,12 +14,10 @@
 .Header-Left-Container{
     display: flex;
     align-items: center;
-    box-sizing: border-box;
 }
 
 .Header-Right-Container{
     display: flex;
     align-items: center;
-    box-sizing: border-box;
 }
 

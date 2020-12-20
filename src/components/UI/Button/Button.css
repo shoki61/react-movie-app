@@ -1,4 +1,15 @@
 .Button{
     border:none;
     outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.Search-Button{
+    height: 35px;
+    width: 35px;
+    border-radius:0 100px 100px 0;
+    background-color: #f0f0f0;
+    color:#414141;
+    font-size: 16px;
 }

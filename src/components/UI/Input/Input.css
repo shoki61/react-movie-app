@@ -2,5 +2,15 @@
     border:none;
     outline: none;
     transition: all .3s ease-in;
+    padding: 0;
+}
+
+.Search-Input{
+    height: 35px;
+    background-color: #f0f0f0;
+    color: #414141;
+    width: 175px;
+    padding: 0 15px;
+    border-radius: 100px 0 0 100px;
 }
 
