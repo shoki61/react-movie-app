@@ -6,6 +6,20 @@
     position: fixed;
     display: flex;
     align-items: center;
-    padding: 0 55px;
+    padding: 0 45px;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.Header-Left-Container{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Header-Right-Container{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
