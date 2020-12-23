@@ -37,7 +37,7 @@
 .Movie-Name{
     font-size: 30px;
     color:#fff;
-    font-weight: 500;
+    font-weight: 800;
     margin: 10px 0 5px 0;
     font-family: 'Amaranth', sans-serif;
     letter-spacing: 1px;
@@ -68,5 +68,15 @@
 .Release-Date{
     opacity: .7;
     font-family:Calibri, sans-serif;
+}
+
+.Overview{
+    width: 75%;
+    text-align: left;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 15px;
 }
 

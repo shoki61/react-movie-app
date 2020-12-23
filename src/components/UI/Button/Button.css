@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .3s ease-in;
 }
 
 .Search-Button{
@@ -25,5 +26,10 @@
     font-size: 13px;
     padding:5px 7px;
     letter-spacing: 1px;
-    margin-top:75px;
+    margin-top:50px;
+}
+
+.Go-Detail:hover{
+    background-color: #ff0092;
+    border:1px solid transparent;
 }

@@ -46,6 +46,9 @@ const slide = props => (
                                         <p className='Vote-Average'>8.2<sup className='Vote-Count'>(536)</sup></p>
                                     </div>
                                 </div>
+                                <p className='Overview'>
+                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
+                                </p>
                                 <Button btnType='Go-Detail'>
                                     Go Detail <BsArrowRightShort style={{fontSize:20}}/>
                                 </Button>
@@ -85,6 +88,9 @@ const slide = props => (
                                         <p className='Vote-Average'>8.2<sup className='Vote-Count'>(536)</sup></p>
                                     </div>
                                 </div>
+                                <p className='Overview'>
+                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
+                                </p>
                                 <Button btnType='Go-Detail'>
                                     Go Detail <BsArrowRightShort style={{fontSize:20}}/>
                                 </Button>
