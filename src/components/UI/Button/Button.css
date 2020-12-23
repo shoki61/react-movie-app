@@ -17,3 +17,13 @@
     color:#414141;
     font-size: 17px;
 }
+
+.Go-Detail{
+    border-radius: 4px;
+    border:1px solid #fff;
+    color:#fff;
+    font-size: 13px;
+    padding:5px 7px;
+    letter-spacing: 1px;
+    margin-top:75px;
+}
