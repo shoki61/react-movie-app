@@ -49,6 +49,12 @@ const slide = props => (
                                 <p className='Overview'>
                                     After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
                                 </p>
+                                <ul>
+                                    <li className='Genres'>Action,</li>
+                                    <li className='Genres'>Adventure,</li>
+                                    <li className='Genres'>Drama,</li>
+                                    <li className='Genres'>Fantasy</li>
+                                </ul>
                                 <Button btnType='Go-Detail'>
                                     Go Detail <BsArrowRightShort style={{fontSize:20}}/>
                                 </Button>
@@ -91,6 +97,12 @@ const slide = props => (
                                 <p className='Overview'>
                                     After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
                                 </p>
+                                <ul>
+                                    <li className='Genres'>Action,</li>
+                                    <li className='Genres'>Adventure,</li>
+                                    <li className='Genres'>Drama,</li>
+                                    <li className='Genres'>Fantasy</li>
+                                </ul>
                                 <Button btnType='Go-Detail'>
                                     Go Detail <BsArrowRightShort style={{fontSize:20}}/>
                                 </Button>

@@ -68,6 +68,7 @@
 .Release-Date{
     opacity: .7;
     font-family:Calibri, sans-serif;
+    font-weight: 100;
 }
 
 .Overview{
@@ -78,5 +79,26 @@
     font-size: 12px;
     letter-spacing: 1px;
     margin-top: 15px;
+}
+
+.Genres{
+    font-size: 12px;
+    font-weight: 600;
+    color: #999999;
+    font-family: Montserrat, sans-serif;
+    margin-right: 5px;
+    transition: all .2s ease-in;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.Genres:hover{
+    color:#fff
+}
+
+.Content-Right ul {
+    display: flex;
+    list-style: none;
+    padding:0
 }
 
