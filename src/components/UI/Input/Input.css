@@ -3,16 +3,28 @@
     outline: none;
     transition: all .3s ease-in;
     padding: 0;
+    letter-spacing: 1px;
+}
+
+.Input:focus{
+    background-color: #ffe3f6;
+}
+
+::placeholder{
+    letter-spacing: 0;
+
+    text-transform: none;
 }
 
 .Search-Input{
     height: 35px;
     border:1px solid #e1e1e1;
     border-right: none;
-    color: #414141;
+    color: #4d4d4d;
     width: 275px;
     padding: 0 15px;
     border-radius: 100px 0 0 100px;
     box-sizing: border-box;
 }
+
 
