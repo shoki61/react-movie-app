@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
 import './Home.css';
-import MostPopular from '../../components/MostPopular/MostPopular';
+import Slide from '../../components/UI/Slide/Slide';
 
 class Home extends Component{
     render(){
         return(
             <div className='Home'>
-                <MostPopular/>
+                <div className='Most-Popular'>
+                    <Slide/>
+                </div>
             </div>
         );
     };
