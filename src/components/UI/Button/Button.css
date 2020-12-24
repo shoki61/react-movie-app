@@ -33,3 +33,17 @@
     background-color: #003669;
     border:1px solid transparent;
 }
+
+.Page-Button{
+    width: 120px;
+    height: 40px;
+    border:1px solid #c4c4c4;
+    color: #777777;
+    letter-spacing: 1px;
+    border-radius: 100px;
+}
+
+.Page-Button:hover{
+    color:#fff;
+    background-color: #214b6e;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './MovieList.css';
+import PageButton from '../UI/PageButtons/PageButtons';
 
 const movieList = props => (
     <div className='Container'>
@@ -187,7 +188,7 @@ const movieList = props => (
                 <p className='Movie-Title'>The Mandalorian</p>
             </div>
         </div>
-
+        <PageButton/>
     </div>
 );
 
