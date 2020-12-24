@@ -1,0 +1,73 @@
+.Container {
+    width: 70%;
+    margin: 75px auto 75px auto;
+}
+
+.List-Container{
+    width: 95%;
+    margin:auto;
+}
+
+.Title{
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #7b7b7b;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.Movie-Container .Poster-Image{
+    width: 175px;
+    height: 262px;
+    transition: all .1s ease-in-out;
+}
+
+.Movie-Container{
+    width: 175px;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.Movie-Vote-Container{
+    display:flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.Movie-Star-Icon{
+    color: #ffa200!important;
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+.Movie-Vote-Average{
+    font-size: 15px;
+    color: #5c5c5c;
+}
+
+.Movie-Title{
+    font-family: Montserrat, sans-serif;
+    color: #414141;
+    font-size: 14px;
+    margin: 3px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.Movie-Container:hover{
+    background-color: #1d405f ;
+    box-shadow: 0 0 20px #1d405f;
+}
+.Movie-Container:hover  .Poster-Image{
+    border-bottom-right-radius:0;
+    border-bottom-left-radius: 0;
+}
+
+.Movie-Container:hover p{
+    color:#fff
+
+}
+
+
