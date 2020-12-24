@@ -6,10 +6,6 @@
     letter-spacing: 1px;
 }
 
-.Input:focus{
-    background-color: #ffe3f6;
-}
-
 ::placeholder{
     letter-spacing: 0;
 

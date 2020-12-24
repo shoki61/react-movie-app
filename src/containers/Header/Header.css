@@ -9,6 +9,7 @@
     padding: 0 45px;
     justify-content: space-between;
     box-sizing: border-box;
+    z-index: 100;
 }
 
 .Header-Left-Container{
