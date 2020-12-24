@@ -187,6 +187,7 @@ const movieList = props => (
                 <p className='Movie-Title'>The Mandalorian</p>
             </div>
         </div>
+
     </div>
 );
 
