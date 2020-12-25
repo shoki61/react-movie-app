@@ -17,12 +17,6 @@
     margin-bottom: 25px;
 }
 
-.Movie-Container .Poster-Image{
-    width: 175px;
-    height: 262px;
-    transition: all .1s ease-in-out;
-}
-
 .Movie-Container{
     display:flex;
     flex-direction: column;
