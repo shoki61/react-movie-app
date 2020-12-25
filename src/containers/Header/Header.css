@@ -15,6 +15,7 @@
 .Header-Left-Container{
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .Header-Right-Container{

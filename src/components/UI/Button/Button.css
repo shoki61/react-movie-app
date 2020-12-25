@@ -20,11 +20,11 @@
 }
 
 .Go-Detail{
-    border-radius: 4px;
+    border-radius: 100px;
     border:1px solid #fff;
     color:#fff;
     font-size: 13px;
-    padding:5px 7px;
+    padding:5px 13px;
     letter-spacing: 1px;
     margin-top:50px;
 }
@@ -38,7 +38,7 @@
     width: 120px;
     height: 40px;
     border:1px solid #c4c4c4;
-    color: #777777;
+    color: #777;
     letter-spacing: 1px;
     border-radius: 100px;
 }

@@ -1,6 +1,7 @@
 .Navigation{
     display: flex;
     align-items: center;
-    margin:0 50px
+    margin:0 50px;
+    height: 100%;
 }
 
