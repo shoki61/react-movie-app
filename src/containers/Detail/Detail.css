@@ -6,9 +6,12 @@
 .Detail-Left{
     width: 30%;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
 }
+
+
 
 .Detail-Right{
     width: 70%;
@@ -21,6 +24,43 @@
     text-align: left;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     font-weight: 100;
+}
+
+.Detail-Average{
+    text-align: left;
+    font-size: 25px;
+    color: #5f5f5f;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+}
+
+.Detail-Average i {
+    color: #ff9100;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.Detail-Right ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    margin:10px 0
+}
+
+.Detail-Right li {
+    color: #999;
+    font-family: "Montserrat SemiBold", sans-serif;
+    font-size: 12px;
+    margin-right: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.Detail-Right li:hover {
+    color: #4d4d4d;
 }
 
 

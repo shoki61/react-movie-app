@@ -18,7 +18,12 @@ class Detail extends Component {
                 </div>
                 <div className='Detail-Right'>
                     <p className='Name'>Mandalorian</p>
-                    <p></p>
+                    <div className='Detail-Average'><i className='fas fa-star'> </i>8.7</div>
+                    <ul>
+                        <li>Action,</li>
+                        <li>Fantasy,</li>
+                        <li>Drama</li>
+                    </ul>
                 </div>
             </div>
         );
