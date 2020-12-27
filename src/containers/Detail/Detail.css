@@ -4,33 +4,76 @@
 }
 
 .Detail-Left{
-    width: 30%;
+    width: 35%;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     flex-direction: column;
 }
 
+.External-Ids-Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+.External-Id{
+    width: 35px;
+    height:35px;
+    font-size: 14px;
+    border-radius: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #34688f;
+    border:1px solid #34688f;
+    margin-right:10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.External-Id:hover {
+    background-color: #34688f;
+    color:#fff;
+    border:1px solid transparent;
+}
 
 .Detail-Right{
-    width: 70%;
+    width: 65%;
     padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Name-Container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-width:65%;
 }
 
 .Name{
     font-size: 45px;
-    color: #575757;
+    color: #4d4d4d;
     text-align: left;
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-weight: 100;
+}
+
+.Detail-Tag-Line{
+    text-align: left;
+    margin: 0 0 10px 0;
+    color: #505c70;
+    font-style: italic;
+    font-size: 14px;
 }
 
 .Detail-Average{
     text-align: left;
     font-size: 25px;
-    color: #5f5f5f;
-    font-weight: 100;
+    color: #938670;
+    font-weight: 600;
     display: flex;
     align-items: center;
 }
@@ -39,6 +82,13 @@
     color: #ff9100;
     font-size: 20px;
     margin-right: 5px;
+}
+
+.Detail-Average-Count{
+    color: #969696;
+    font-weight: 100;
+    font-size: 18px;
+    margin-left: 5px;
 }
 
 .Detail-Right ul {
@@ -56,11 +106,42 @@
     margin-right: 10px;
     transition: all .2s ease-in-out;
     cursor: pointer;
-    font-style: italic;
 }
 
 .Detail-Right li:hover {
     color: #4d4d4d;
 }
 
+.Detail-Overview{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3f3f3f;
+    font-size: 15px;
+    text-align: left;
+    width: 65%;
+    letter-spacing: 1px;
+    margin:0 0 10px 0;
+}
 
+.Detail-Release-Date{
+    font-size: 14px;
+    color: #9eb0c4;
+    font-style: oblique;
+    font-weight: 700;
+    margin-left: 10px;
+    font-family: Montserrat ,sans-serif;
+}
+
+.Detail-Title{
+    font-family:'Source Sans Pro SemiBold', sans-serif;
+    color:#414141;
+    font-size: 15px;
+    text-align: left;
+    margin:15px 0 3px 0
+}
+
+.Detail-Info{
+    font-family:'Source Sans Pro', sans-serif;
+    color: #5f5f5f;
+    text-align: left;
+    font-size: 14px;
+}
