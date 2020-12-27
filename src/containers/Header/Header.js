@@ -24,7 +24,7 @@ class Header extends Component{
                     </div>
                 </div>
                 <div className='Header-Right-Container'>
-                    <Link title='Github Repository' size={23}    color='#414141' url='https://github.com/shoki61/react-movie-app'>
+                    <Link margin={20} title='Github Repository' size={23}    color='#414141' url='https://github.com/shoki61/react-movie-app'>
                         <FaGithub/>
                     </Link>
                     <Link title='TMDB Website' url='https://www.themoviedb.org'>

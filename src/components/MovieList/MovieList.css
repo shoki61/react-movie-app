@@ -63,7 +63,7 @@
     background-color: #1d405f ;
     box-shadow: 0 0 20px #1d405f;
 }
-.Movie-Container:hover  .Poster-Image{
+.Movie-Container:hover  .Movie-List-Poster{
     border-bottom-right-radius:0;
     border-bottom-left-radius: 0;
 }

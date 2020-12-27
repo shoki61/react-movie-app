@@ -14,7 +14,43 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
+                />
+                <div className='Movie-Vote-Container'>
+                    <p className='Movie-Star-Icon'>
+                        <i className='fas fa-star' />
+                    </p>
+                    <div>
+                        <p className='Movie-Vote-Average'>8.2</p>
+                    </div>
+                </div>
+                <p className='Movie-Title'>The Mandalorian</p>
+            </div>
+            <div className='Movie-Container'>
+                <Image
+                    width={175}
+                    height={262}
+                    src={require('../../assets/poster.jpg').default}
+                    alt='image'
+                    className='Movie-List-Poster'
+                />
+                <div className='Movie-Vote-Container'>
+                    <p className='Movie-Star-Icon'>
+                        <i className='fas fa-star'> </i>
+                    </p>
+                    <div>
+                        <p className='Movie-Vote-Average'>8.2</p>
+                    </div>
+                </div>
+                <p className='Movie-Title'>The Mandalorian</p>
+            </div>
+            <div className='Movie-Container'>
+                <Image
+                    width={175}
+                    height={262}
+                    src={require('../../assets/poster.jpg').default}
+                    alt='image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -50,7 +86,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -68,7 +104,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -86,7 +122,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -104,7 +140,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -122,7 +158,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -140,7 +176,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -158,7 +194,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -176,7 +212,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -194,7 +230,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -212,7 +248,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>
@@ -230,43 +266,7 @@ const movieList = props => (
                     height={262}
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
-                    className='Poster-Image'
-                />
-                <div className='Movie-Vote-Container'>
-                    <p className='Movie-Star-Icon'>
-                        <i className='fas fa-star'> </i>
-                    </p>
-                    <div>
-                        <p className='Movie-Vote-Average'>8.2</p>
-                    </div>
-                </div>
-                <p className='Movie-Title'>The Mandalorian</p>
-            </div>
-            <div className='Movie-Container'>
-                <Image
-                    width={175}
-                    height={262}
-                    src={require('../../assets/poster.jpg').default}
-                    alt='image'
-                    className='Poster-Image'
-                />
-                <div className='Movie-Vote-Container'>
-                    <p className='Movie-Star-Icon'>
-                        <i className='fas fa-star'> </i>
-                    </p>
-                    <div>
-                        <p className='Movie-Vote-Average'>8.2</p>
-                    </div>
-                </div>
-                <p className='Movie-Title'>The Mandalorian</p>
-            </div>
-            <div className='Movie-Container'>
-                <Image
-                    width={175}
-                    height={262}
-                    src={require('../../assets/poster.jpg').default}
-                    alt='image'
-                    className='Poster-Image'
+                    className='Movie-List-Poster'
                 />
                 <div className='Movie-Vote-Container'>
                     <p className='Movie-Star-Icon'>

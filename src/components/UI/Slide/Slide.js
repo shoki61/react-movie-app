@@ -40,7 +40,7 @@ const slide = props => (
                                 <p className='Movie-Name'>The Mandalorian <span className='Release-Date'> (2020)</span></p>
                                 <div className='Vote-Container'>
                                     <p className='Star-Icon'>
-                                        <i className='fas fa-star'> </i>
+                                        <i className='fas fa-star'/>
                                     </p>
                                     <div>
                                         <p className='Vote-Average'>8.2<sup className='Vote-Count'>(536)</sup></p>
