@@ -1,0 +1,15 @@
+List{
+    display: flex;
+    background-color: #61dafb;
+}
+
+.List-Title{
+    font-size: 25px;
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+    color:#414141
+}
+
+.List-Item-Container{
+    display:flex;
+    align-items: center;
+}
