@@ -1,6 +1,6 @@
 .List{
     width: 85%;
-    margin:60px auto;
+    margin:40px auto;
 }
 
 .List-Items-Container{
@@ -17,11 +17,11 @@
 }
 
 .List-Item-Container{
-    margin:5px 10px;
-    width: 100px;
+    margin:5px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .List-Name{
@@ -38,16 +38,16 @@
 }
 
 .List-Items-Container::-webkit-scrollbar {
-    height: 10px;
+    height: 7px;
 }
 
 .List-Items-Container::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 2px #9c9c9c;
+    box-shadow: inset 0 0 2px #d0d0d0;
     border-radius: 100px;
 }
 
 .List-Items-Container::-webkit-scrollbar-thumb {
-    background: #b9b9b9;
+    background: #d0d0d0;
     border-radius: 100px;
 }
 

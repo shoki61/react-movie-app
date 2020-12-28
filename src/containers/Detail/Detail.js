@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { SiImdb } from 'react-icons/si';
 import { ImFacebook } from 'react-icons/im';
+import { BsPlayFill } from 'react-icons/bs';
 import { AiFillInstagram, AiOutlineTwitter,AiFillPlayCircle, AiOutlineLink } from 'react-icons/ai';
 
 import './Detail.css';
 import Image from '../../components/UI/Image/Image';
-import Button from '../../components/UI/Button/Button';
 import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
 
@@ -58,7 +58,16 @@ class Detail extends Component {
                                 <p className='Detail-Info'>$359,900,000.00</p>
                             </div>
                         </div>
+                        <div>
+                            <p className='Detail-Title'>Director</p>
+                            <p className='Detail-Info'>Christopher Nolan</p>
+                        </div>
                         <div className='External-Ids-Container'>
+                            <div className='External-Id' title='Trailer'>
+                                <Link >
+                                    <BsPlayFill/>
+                                </Link>
+                            </div>
                             <div className='External-Id' title='Website'>
                                 <Link >
                                     <AiOutlineLink/>
@@ -98,7 +107,7 @@ class Detail extends Component {
                     </div>
                     <div>
                         <List
-                            title='Cast'
+                            title='Crew'
                             src={require('../../assets/christopherNolan.jpg').default}
                             name='Christopher Nolan'
                             who='Director, Writer'
@@ -106,10 +115,15 @@ class Detail extends Component {
                     </div>
                     <div>
                         <List
-                            title='Cast'
+                            title='Production Companies'
                             src={require('../../assets/christopherNolan.jpg').default}
-                            name='Christopher Nolan'
-                            who='Director, Writer'
+                            name='Syncopy'
+                        />
+                    </div>
+                    <div>
+                        <List
+                            title='Videos'
+                            type={'video'}
                         />
                     </div>
                 </div>
