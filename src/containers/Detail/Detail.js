@@ -96,6 +96,22 @@ class Detail extends Component {
                             who='Director, Writer'
                         />
                     </div>
+                    <div>
+                        <List
+                            title='Cast'
+                            src={require('../../assets/christopherNolan.jpg').default}
+                            name='Christopher Nolan'
+                            who='Director, Writer'
+                        />
+                    </div>
+                    <div>
+                        <List
+                            title='Cast'
+                            src={require('../../assets/christopherNolan.jpg').default}
+                            name='Christopher Nolan'
+                            who='Director, Writer'
+                        />
+                    </div>
                 </div>
             </div>
         );
