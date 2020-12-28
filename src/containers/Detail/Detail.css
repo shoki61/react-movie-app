@@ -1,6 +1,13 @@
 .Detail{
-    display: flex;
     padding-top: 150px;
+}
+
+.Detail-Top{
+    display:flex
+}
+
+.Detail-Bottom{
+    display: flex;
 }
 
 .Detail-Left{
@@ -37,6 +44,7 @@
     background-color: #34688f;
     color:#fff;
     border:1px solid transparent;
+    box-shadow: 0 0 5px #5a5a5a;
 }
 
 .Detail-Right{

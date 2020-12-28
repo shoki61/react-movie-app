@@ -10,8 +10,8 @@ const list = props => (
             <Image
                 src={props.src}
                 alt='image'
-                width={65}
-                height={75}
+                width={75}
+                height={85}
                 className='List-Image'
             />
             <div>
