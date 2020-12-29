@@ -8,7 +8,6 @@ import './Detail.css';
 import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
-import TabNavigation from '../../components/UI/TabNavigation/TabNavigation';
 
 class Detail extends Component {
     render() {
@@ -125,7 +124,6 @@ class Detail extends Component {
                         />
                     </div>
                 </div>
-                <TabNavigation/>
             </div>
         );
     };

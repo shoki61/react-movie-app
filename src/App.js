@@ -13,8 +13,8 @@ class App extends  Component{
         <div className="App">
             <Header/>
             {/*<Home/>*/}
-            <Detail/>
-            {/*<PersonalInformation/>*/}
+            {/*<Detail/>*/}
+            <PersonalInformation/>
         </div>
     );
   };

@@ -12,3 +12,8 @@
     border-radius: 100px;
     margin-bottom: 5px;
 }
+
+.Person-Image{
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #6a6a6a;
+}
