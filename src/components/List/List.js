@@ -5,7 +5,7 @@ import Image from '../UI/Image/Image';
 
 const list = props => (
     <div className='List'>
-        <p className='List-Title'>{props.title}</p>
+        <p className='List-Title'>{props.title}<span className='List-Count'>({props.count})</span></p>
         <div className='List-Items-Container'>
             <div className='List-Item-Container'>
                 <Image

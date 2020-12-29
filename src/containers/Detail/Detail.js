@@ -8,7 +8,6 @@ import './Detail.css';
 import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
-import img1 from "../../assets/backdrop.jpg";
 
 class Detail extends Component {
     render() {
@@ -101,6 +100,7 @@ class Detail extends Component {
                     <div>
                         <List
                             title='Cast'
+                            count={45}
                             src={require('../../assets/christopherNolan.jpg').default}
                             name='Christopher Nolan'
                             who='Director, Writer'
@@ -109,6 +109,7 @@ class Detail extends Component {
                     <div>
                         <List
                             title='Crew'
+                            count={16}
                             src={require('../../assets/christopherNolan.jpg').default}
                             name='Christopher Nolan'
                             who='Director, Writer'
@@ -117,6 +118,7 @@ class Detail extends Component {
                     <div>
                         <List
                             title='Production Companies'
+                            count={8}
                             src={require('../../assets/christopherNolan.jpg').default}
                             name='Syncopy'
                         />

@@ -3,6 +3,13 @@
     margin:40px auto;
 }
 
+.List-Count{
+    color: #939393;
+    margin-left: 5px;
+    font-weight: 600;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
 .List-Items-Container{
     display: flex;
     overflow: scroll;
