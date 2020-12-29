@@ -8,6 +8,7 @@ import './Detail.css';
 import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
+import img1 from "../../assets/backdrop.jpg";
 
 class Detail extends Component {
     render() {
@@ -118,12 +119,6 @@ class Detail extends Component {
                             title='Production Companies'
                             src={require('../../assets/christopherNolan.jpg').default}
                             name='Syncopy'
-                        />
-                    </div>
-                    <div>
-                        <List
-                            title='Videos'
-                            type={'video'}
                         />
                     </div>
                 </div>

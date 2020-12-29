@@ -11,8 +11,8 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={85}
-                    height={85}
+                    width={65}
+                    height={65}
                     className='List-Image'
                 />
                 <div>
@@ -24,8 +24,8 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={85}
-                    height={85}
+                    width={65}
+                    height={65}
                     className='List-Image'
                 />
                 <div>
@@ -37,8 +37,8 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={85}
-                    height={85}
+                    width={65}
+                    height={65}
                     className='List-Image'
                 />
                 <div>
