@@ -5,6 +5,7 @@ import './App.css';
 import Header from "./containers/Header/Header";
 import Home from './containers/Home/Home';
 import Detail from './containers/Detail/Detail';
+import PersonalInformation from "./containers/PersonalInformation/PersonalInformation";
 
 class App extends  Component{
   render(){
@@ -12,7 +13,8 @@ class App extends  Component{
         <div className="App">
             <Header/>
             {/*<Home/>*/}
-            <Detail/>
+            {/*<Detail/>*/}
+            <PersonalInformation/>
         </div>
     );
   };
