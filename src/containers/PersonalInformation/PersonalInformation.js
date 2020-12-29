@@ -6,7 +6,6 @@ class PersonalInformation extends Component{
     render(){
         return(
             <div className='Personal-Information'>
-
             </div>
         );
     };
