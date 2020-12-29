@@ -15,7 +15,67 @@
     justify-content: flex-end;
 }
 
-.Person-Info{
+.Person-Info-Container{
     width: 50%;
     padding-left: 35px;
+}
+
+.Person-Name{
+    font-size: 30px;
+    color: #3b3b3b;
+    font-family: Montserrat,sans-serif;
+}
+
+.Person-Job{
+    color: #95a6b9;
+    font-size: 23px;
+    margin-left: 7px;
+}
+
+.Person-Birthday{
+    color: #95a6b9;
+    font-family: "Montserrat SemiBold",sans-serif;
+    font-size: 13px;
+    padding:7px 0 0 7px;
+}
+
+.Person-Title{
+    font-family: "Montserrat SemiBold", sans-serif;
+    font-size: 16px;
+    margin: 18px 0 2px 0;
+    color: #606060
+}
+
+.Person-Info{
+    font-size: 15px;
+    font-family: "Source Sans Pro",sans-serif;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    color:#414141
+}
+
+.Person-ExternalID-Container{
+    margin-top: 8px;
+    display:flex;
+    align-items: center;
+}
+
+.Person-External-Id{
+    margin-right: 20px;
+    display: flex;
+    color: #4f4f4f;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    border:1px solid grey;
+    cursor:pointer;
+    transition: all .3s ease-in-out;
+}
+
+.Person-External-Id:hover{
+    background-color: #4f4f4f;
+    color:#fff;
+    box-shadow: 0 0 5px grey;
 }
