@@ -5,10 +5,10 @@ import PageButton from '../UI/PageButtons/PageButtons';
 import Image from '../UI/Image/Image';
 
 const movieList = props => (
-    <div className='Container' onClick={()=> props.clicked()}>
+    <div className='Container'>
         <p className='Title'>Popular Movies</p>
         <div className='List-Container'>
-            <div className='Movie-Container'>
+            <div onClick={()=> props.clicked()} className='Movie-Container'>
                 <Image
                     src={require('../../assets/poster.jpg').default}
                     alt='image'
