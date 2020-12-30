@@ -80,6 +80,20 @@ class PersonalInformation extends Component{
                         override='Person-Movie'
                         name='Tenet'
                     />
+                    <List
+                        count={58}
+                        title='Movies'
+                        src={require('../../assets/poster.jpg').default}
+                        override='Person-Movie'
+                        name='Tenet'
+                    />
+                    <List
+                        count={9}
+                        title='TV Shows'
+                        src={require('../../assets/poster.jpg').default}
+                        override='Person-Movie'
+                        name='Tenet'
+                    />
                 </div>
             </div>
         );
