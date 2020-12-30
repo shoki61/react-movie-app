@@ -11,9 +11,7 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={65}
-                    height={65}
-                    className='List-Image'
+                    className={['List-Image',props.override].join(' ')}
                 />
                 <div>
                     <p className='List-Name'>{props.name}</p>
@@ -24,9 +22,7 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={65}
-                    height={65}
-                    className='List-Image'
+                    className={['List-Image',props.override].join(' ')}
                 />
                 <div>
                     <p className='List-Name'>{props.name}</p>
@@ -37,9 +33,7 @@ const list = props => (
                 <Image
                     src={props.src}
                     alt='image'
-                    width={65}
-                    height={65}
-                    className='List-Image'
+                    className={['List-Image',props.override].join(' ')}
                 />
                 <div>
                     <p className='List-Name'>{props.name}</p>

@@ -17,7 +17,6 @@ class Detail extends Component {
                     <div className='Detail-Left'>
                         <Image
                             className='Detail-Poster'
-                            width={275}
                             alt='image'
                             src={require('../../assets/poster.jpg').default}
                         />

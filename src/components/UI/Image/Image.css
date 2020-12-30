@@ -1,19 +1,30 @@
 .Movie-List-Poster{
     border-radius: 7px;
+    width:175px
 }
 
 
 .Detail-Poster{
     border-radius: 10px;
+    width: 275px;
 }
 
 .List-Image{
     object-fit: cover;
     border-radius: 100px;
     margin-bottom: 5px;
+    width: 65px;
+    height: 65px;
 }
 
 .Person-Image{
     border-radius: 10px;
     box-shadow: 1px 1px 5px #6a6a6a;
+    width: 300px;
+}
+
+.Person-Movie{
+    width: 125px;
+    height:auto;
+    border-radius: 7px;
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {AiFillInstagram, AiOutlineLink, AiOutlineTwitter} from "react-icons/ai";
-import {BsPlayFill} from "react-icons/bs";
 import {SiImdb} from "react-icons/si";
 import {ImFacebook} from "react-icons/im";
 
 import './PersonalInformation.css';
 import Image from '../../components/UI/Image/Image';
 import Link from "../../components/UI/Link/Link";
+import List from '../../components/List/List';
 
 class PersonalInformation extends Component{
     render(){
@@ -16,7 +16,6 @@ class PersonalInformation extends Component{
                     <div className='Person-Image-Container'>
                         <Image
                             className='Person-Image'
-                            width={300}
                             src={require('../../assets/christopherNolan.jpg').default}
                         />
                     </div>
@@ -72,6 +71,15 @@ class PersonalInformation extends Component{
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className='Personal-Information-Bottom'>
+                    <List
+                        count={12}
+                        title='Known For'
+                        src={require('../../assets/poster.jpg').default}
+                        override='Person-Movie'
+                        name='Tenet'
+                    />
                 </div>
             </div>
         );
