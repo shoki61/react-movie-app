@@ -10,17 +10,18 @@ import Button from '../../UI/Button/Button';
 
 
 
-const slide = props => (
+const slide = props => {
+    return(
         <div className='slide-container'>
             <Slide>
                 <div
                     style={{
-                        width:'100%',
-                        height:'100%',
+                        width: '100%',
+                        height: '100%',
                         backgroundImage: `url(${img1})`,
-                        backgroundRepeat:'no-repeat',
-                        backgroundSize:'cover',
-                        backgroundPosition:'right -150px top'
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'right -150px top'
                     }}
                     className='each-slide'
                 >
@@ -30,8 +31,8 @@ const slide = props => (
                                 <div
                                     style={{
                                         backgroundImage: `url(${img})`,
-                                        backgroundRepeat:'no-repeat',
-                                        backgroundSize:'cover'
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundSize: 'cover'
                                     }}
                                     className='Poster-Image'>
                                 </div>
@@ -47,7 +48,9 @@ const slide = props => (
                                     </div>
                                 </div>
                                 <p className='Overview'>
-                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
+                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A
+                                    lone gunfighter makes his way through the outer reaches, earning his keep as a bounty
+                                    hunter.
                                 </p>
                                 <ul>
                                     <li className='Genres'>Action,</li>
@@ -56,7 +59,7 @@ const slide = props => (
                                     <li className='Genres'>Fantasy</li>
                                 </ul>
                                 <Button btnType='Go-Detail'>
-                                    Go Detail <BsArrowRightShort style={{fontSize:20}}/>
+                                    Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
                                 </Button>
                             </div>
                         </div>
@@ -64,11 +67,11 @@ const slide = props => (
                 </div>
                 <div
                     style={{
-                        width:'100%',
-                        height:'100%',
+                        width: '100%',
+                        height: '100%',
                         background: `url(${img1}) no-repeat`,
-                        backgroundSize:'cover',
-                        backgroundPosition:'right -150px top'
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'right -150px top'
                     }}
                     className='each-slide'
                 >
@@ -78,8 +81,8 @@ const slide = props => (
                                 <div
                                     style={{
                                         backgroundImage: `url(${img})`,
-                                        backgroundRepeat:'no-repeat',
-                                        backgroundSize:'cover'
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundSize: 'cover'
                                     }}
                                     className='Poster-Image'>
                                 </div>
@@ -95,7 +98,9 @@ const slide = props => (
                                     </div>
                                 </div>
                                 <p className='Overview'>
-                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.
+                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A
+                                    lone gunfighter makes his way through the outer reaches, earning his keep as a bounty
+                                    hunter.
                                 </p>
                                 <ul>
                                     <li className='Genres'>Action,</li>
@@ -103,8 +108,8 @@ const slide = props => (
                                     <li className='Genres'>Drama,</li>
                                     <li className='Genres'>Fantasy</li>
                                 </ul>
-                                <Button btnType='Go-Detail'>
-                                    Go Detail <BsArrowRightShort style={{fontSize:20}}/>
+                                <Button clicked={()=> props.clicked()} btnType='Go-Detail'>
+                                    Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
                                 </Button>
                             </div>
                         </div>
@@ -112,6 +117,7 @@ const slide = props => (
                 </div>
             </Slide>
         </div>
-);
+    )
+};
 
 export default slide;

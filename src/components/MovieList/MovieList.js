@@ -5,7 +5,7 @@ import PageButton from '../UI/PageButtons/PageButtons';
 import Image from '../UI/Image/Image';
 
 const movieList = props => (
-    <div className='Container'>
+    <div className='Container' onClick={()=> props.clicked()}>
         <p className='Title'>Popular Movies</p>
         <div className='List-Container'>
             <div className='Movie-Container'>
