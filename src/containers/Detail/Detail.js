@@ -10,6 +10,9 @@ import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
 
 class Detail extends Component {
+
+    goPersonalInformation = () => this.props.history.push('/personal-information')
+
     render() {
         return (
             <div className='Detail'>
@@ -98,6 +101,7 @@ class Detail extends Component {
                 <div className='Detail-Bottom'>
                     <div>
                         <List
+                            clicked={this.goPersonalInformation}
                             title='Cast'
                             count={45}
                             src={require('../../assets/christopherNolan.jpg').default}

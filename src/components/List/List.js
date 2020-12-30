@@ -7,7 +7,7 @@ const list = props => (
     <div className='List'>
         <p className='List-Title'>{props.title}<span className='List-Count'>({props.count})</span></p>
         <div className='List-Items-Container'>
-            <div className='List-Item-Container'>
+            <div onClick={()=> props.clicked()} className='List-Item-Container'>
                 <Image
                     src={props.src}
                     alt='image'

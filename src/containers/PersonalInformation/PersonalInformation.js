@@ -9,6 +9,7 @@ import Link from "../../components/UI/Link/Link";
 import List from '../../components/List/List';
 
 class PersonalInformation extends Component{
+    goDetail = () => this.props.history.push('/detail');
     render(){
         return(
             <div className='Personal-Information'>
@@ -74,6 +75,7 @@ class PersonalInformation extends Component{
                 </div>
                 <div className='Personal-Information-Bottom'>
                     <List
+                        clicked={this.goDetail}
                         count={12}
                         title='Known For'
                         src={require('../../assets/poster.jpg').default}
