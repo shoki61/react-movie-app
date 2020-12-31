@@ -11,7 +11,9 @@ import List from '../../components/List/List';
 
 class Detail extends Component {
 
-    goPersonalInformation = () => this.props.history.push('/personal-information')
+    goPersonalInformation = () => this.props.history.push('/personal-information');
+
+    goGenre = () => this.props.history.push('/genre');
 
     render() {
         return (
@@ -36,7 +38,7 @@ class Detail extends Component {
                             <i className='fas fa-star'/>8.7 <div className='Detail-Average-Count'>/503</div>
                         </div>
                         <ul>
-                            <li>Action,</li>
+                            <li onClick={()=> this.goGenre()}>Action,</li>
                             <li>Fantasy,</li>
                             <li>Drama</li>
                         </ul>
