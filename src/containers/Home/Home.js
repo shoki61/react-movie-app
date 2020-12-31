@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './Home.css';
 import Slide from '../../components/UI/Slide/Slide';
-import MovieList from '../../components/MovieList/MovieList';
+import GenreList from '../../components/GenreList/GenreList';
 
 class Home extends Component{
     goDetail = () => this.props.history.push('/detail')
@@ -13,7 +13,7 @@ class Home extends Component{
                     <Slide clicked={this.goDetail}/>
                 </div>
                 <div>
-                    <MovieList clicked={this.goDetail}/>
+                    <GenreList title='Popular Movies' clicked={this.goDetail}/>
                 </div>
             </div>
         );

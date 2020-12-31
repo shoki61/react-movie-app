@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './MovieList.css';
+import './GenreList.css';
 import PageButton from '../UI/PageButtons/PageButtons';
 import Image from '../UI/Image/Image';
 
-const movieList = props => (
+const genreList = props => (
     <div className='Container'>
-        <p className='Title'>Popular Movies</p>
+        <p className='Title'>{props.title}</p>
         <div className='List-Container'>
             <div onClick={()=> props.clicked()} className='Movie-Container'>
                 <Image
@@ -253,4 +253,4 @@ const movieList = props => (
     </div>
 );
 
-export default movieList;
+export default genreList;
