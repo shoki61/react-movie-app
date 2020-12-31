@@ -13,7 +13,7 @@ class Home extends Component{
                     <Slide clicked={this.goDetail}/>
                 </div>
                 <div>
-                    <GenreList title='Popular Movies' clicked={this.goDetail}/>
+                    <GenreList title='Popular' clicked={this.goDetail}/>
                 </div>
             </div>
         );

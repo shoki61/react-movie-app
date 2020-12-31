@@ -6,7 +6,7 @@ import Image from '../UI/Image/Image';
 
 const genreList = props => (
     <div className='Container'>
-        <p className='Title'>{props.title}</p>
+        <p className='Title'>{props.title} Movies</p>
         <div className='List-Container'>
             <div onClick={()=> props.clicked()} className='Movie-Container'>
                 <Image
