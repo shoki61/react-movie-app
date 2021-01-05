@@ -1,0 +1,3 @@
+export {
+    getPopularMovies
+} from './movie';

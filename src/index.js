@@ -4,11 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+
+import movieReducer from './store/reducers/movie';
+import peopleReducer from './store/reducers/people';
+import searchResultReducer from './store/reducers/searchResult';
+
+const rootReducer = combineReducers({
+    movie: movieReducer,
+    people: peopleReducer,
+    result: searchResultReducer
+});
+
+const store = createStore(rootReducer,applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
