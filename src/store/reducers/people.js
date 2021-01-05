@@ -10,7 +10,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type){
         case actionTypes.GET_PEOPLE_DETAILS_START:
-            return updateObject(state,{loading:true});
+            return updateObject(state,{loading:true, error:null});
         case actionTypes.GET_PEOPLE_DETAIL_SUCCESS:
             return updateObject(state,{
                 loading:null,

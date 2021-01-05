@@ -10,14 +10,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.typ){
         case actionTypes.GET_RESULT_TITLE_START:
-            return updateObject(state, {loading: true});
+            return updateObject(state, {loading: true, error:null});
         case actionTypes.GET_RESULT_TITLE_SUCCESS:
             return updateObject(state, {
-                result:action.result,
-                loading:null
+                loading:null,
+                result:action.result
             });
         case actionTypes.GET_RESULT_TITLE_FAIL:
-            return updateObject(state, {error:true});
+            return updateObject(state, {loading:null,error:true});
         default: return state;
     };
 };
