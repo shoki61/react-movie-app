@@ -1,6 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../helper/utility';
-import {act} from "@testing-library/react";
 
 const initialState = {
     searchTitle:null,
