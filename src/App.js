@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from './store/actions/index';
 
 
 import './App.css';
@@ -10,7 +12,11 @@ import PersonalInformation from "./containers/PersonalInformation/PersonalInform
 import Genre from "./containers/Genre/Genre";
 
 class App extends  Component{
-  render(){
+    componentDidMount() {
+        this.props.onGetPopularMovies();
+    };
+
+    render(){
     return (
         <div className="App">
             <Header/>
@@ -23,4 +29,11 @@ class App extends  Component{
   };
 };
 
-export default App;
+
+const mapDispatchToProps = dispatch => {
+    return{
+        onGetPopularMovies: () => dispatch(actions.getPopularMovies())
+    };
+};
+
+export default connect(null,mapDispatchToProps)(App);
