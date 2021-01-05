@@ -3,6 +3,7 @@ import React from 'react';
 import './GenreList.css';
 import PageButton from '../UI/PageButtons/PageButtons';
 import Image from '../UI/Image/Image';
+import Spinner from '../UI/Spinner/Spinner';
 
 const genreList = props => (
     <div className='Container'>
@@ -28,7 +29,7 @@ const genreList = props => (
                              <p className='Movie-Title'>{item.title}</p>
                          </div>
                      ))
-                     : <p>yok</p>
+                     : <Spinner/>
             }
         </div>
         <PageButton/>
