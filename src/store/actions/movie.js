@@ -28,8 +28,7 @@ const getPopularMovies = () => {
         dispatch(popularMoviesStart());
         axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=1`)
             .then(response=>{
-                console.log(response.data)
-                dispatch(popularMoviesSuccess(response))
+                dispatch(popularMoviesSuccess(response.data))
             })
             .catch(error=>{
                 dispatch(popularMoviesFail())

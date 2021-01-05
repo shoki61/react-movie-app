@@ -4,7 +4,7 @@ import { updateObject } from '../../helper/utility';
 const initialState = {
     searchTitle:null,
     movieDetail:null,
-    popularMovies:null,
+    popularMovies:[],
     filteredMostPopular:null,
     error:null,
     loading:null
