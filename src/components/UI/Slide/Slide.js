@@ -5,18 +5,15 @@ import {BsArrowRightShort} from 'react-icons/bs'
 
 import './Slide.css';
 import Button from '../../UI/Button/Button';
-import genresData from '../../../helper/genres.json';
+import genresData from '../../../data/genres.json';
+import Spinner from '../Spinner/Spinner';
 
 
 
 const slide = props => {
-    console.log(props.filteredPopular)
     return(
         <div>
             <div className='slide-container'>
-                <p>{JSON.stringify(props.filteredPopular)}</p>
-                ********************
-                <p>{JSON.stringify(genresData.genres[0].name)}</p>
                 {
                     props.filteredPopular ?
                         <Slide>
@@ -75,7 +72,7 @@ const slide = props => {
                                 ))
                             }
                         </Slide>
-                        : <p>yok</p>
+                        : <Spinner/>
                 }
             </div>
         </div>
