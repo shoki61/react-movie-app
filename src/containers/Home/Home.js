@@ -4,9 +4,14 @@ import { connect } from 'react-redux';
 import './Home.css';
 import Slide from '../../components/UI/Slide/Slide';
 import GenreList from '../../components/GenreList/GenreList';
+import * as actions from '../../store/actions/index';
 
 class Home extends Component{
     goDetail = () => this.props.history.push('/detail');
+
+    nextPage = () => this.props.onGetPopularMovie(this.props.page+1);
+
+    previewPage = () => this.props.onGetPopularMovie(this.props.page-1);
 
     render(){
         return(
@@ -20,9 +25,12 @@ class Home extends Component{
                     <GenreList
                         movieList={this.props.popularMovies}
                         title='Popular'
+                        nextPage={this.nextPage}
+                        previewPage={this.previewPage}
                         clicked={this.goDetail}
                     />
                 </div>
+                <p>{this.props.page}</p>
             </div>
         );
     };
@@ -31,8 +39,15 @@ class Home extends Component{
 const mapStateToProps = state => {
     return {
         popularMovies:state.movie.popularMovies,
-        filteredPopular: state.movie.filteredMostPopular
+        filteredPopular: state.movie.filteredMostPopular,
+        page: state.movie.page,
     };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = dispatch => {
+    return{
+        onGetPopularMovie: value => dispatch(actions.getPopularMovies(value))
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

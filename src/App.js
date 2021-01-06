@@ -13,7 +13,8 @@ import Genre from "./containers/Genre/Genre";
 
 class App extends  Component{
     componentDidMount() {
-        this.props.onGetPopularMovies();
+        this.props.onGetPopularMovies(1);
+        this.props.onGetMostPopular();
     };
 
     render(){
@@ -29,10 +30,10 @@ class App extends  Component{
   };
 };
 
-
 const mapDispatchToProps = dispatch => {
     return{
-        onGetPopularMovies: () => dispatch(actions.getPopularMovies())
+        onGetPopularMovies: value => dispatch(actions.getPopularMovies(value)),
+        onGetMostPopular: () => dispatch(actions.extractMostPopular())
     };
 };
 

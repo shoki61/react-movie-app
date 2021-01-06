@@ -3,6 +3,7 @@ import React from 'react';
 import './GenreList.css';
 import PageButton from '../UI/PageButtons/PageButtons';
 import Spinner from '../UI/Spinner/Spinner';
+import Image from '../UI/Image/Image';
 
 const genreList = props => (
     <div className='Container'>
@@ -12,14 +13,11 @@ const genreList = props => (
                  props.movieList.results
                      ? props.movieList.results.map(item => (
                          <div onClick={()=> props.clicked()} className='Movie-Container'>
-                             <div
-                                 className='Genre-Poster-Img'
-                                 style={{
-                                     background:`url('https://image.tmdb.org/t/p/w500${item.poster_path}') no-repeat center`,
-                                     backgroundSize: 'cover'
-                                 }}
-                             >
-                             </div>
+                             <Image
+                                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                                 alt='image'
+                                 className='Movie-List-Poster'
+                             />
                              <div className='Movie-Vote-Container'>
                                  <p className='Movie-Star-Icon'>
                                      <i className='fas fa-star' />
@@ -34,7 +32,7 @@ const genreList = props => (
                      : <Spinner/>
             }
         </div>
-        <PageButton page={props.movieList.page}/>
+        <PageButton next={props.nextPage} preview={props.previewPage} page={props.movieList.page}/>
     </div>
 );
 

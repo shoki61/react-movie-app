@@ -6,6 +6,7 @@ const initialState = {
     movieDetail:null,
     popularMovies:[],
     filteredMostPopular:null,
+    page:1,
     error:null,
     loading:null
 };
@@ -23,7 +24,8 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.GET_POPULAR_MOVIES_SUCCESS:
             return updateObject(state, {
                 loading:null,
-                popularMovies: action.popularMovies
+                popularMovies: action.popularMovies,
+                page:action.page
             });
         case actionTypes.GET_POPULAR_MOVIES_FAIL:
             return updateObject(state, {loading:null, error:true});

@@ -9,10 +9,11 @@ const popularMoviesStart = () => {
     };
 };
 
-const popularMoviesSuccess = data => {
+const popularMoviesSuccess = (data, value) => {
     return {
         type: actionTypes.GET_POPULAR_MOVIES_SUCCESS,
-        popularMovies: data
+        popularMovies: data,
+        page:value
     };
 };
 
@@ -31,12 +32,10 @@ const filteredMostPopular = data => {
 };
 
 
-const getPopularMovies = () => {
+const extractMostPopular = () => {
     return dispatch => {
-        dispatch(popularMoviesStart());
         axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=1`)
             .then(response=>{
-                dispatch(popularMoviesSuccess(response.data))
                 const temp = [];
                 response.data.results.filter(item => {
                     if(item.vote_average > 7.5){
@@ -46,7 +45,19 @@ const getPopularMovies = () => {
                     };
                 });
                 dispatch(filteredMostPopular(temp));
-                console.log(temp);
+            })
+            .catch(error=>{
+            });
+    };
+}
+
+
+const getPopularMovies = value => {
+    return dispatch => {
+        dispatch(popularMoviesStart());
+        axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=${value}`)
+            .then(response=>{
+                dispatch(popularMoviesSuccess(response.data, value))
             })
             .catch(error=>{
                 dispatch(popularMoviesFail())
@@ -57,5 +68,6 @@ const getPopularMovies = () => {
 
 
 export {
-    getPopularMovies
+    getPopularMovies,
+    extractMostPopular
 };

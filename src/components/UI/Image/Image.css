@@ -1,6 +1,8 @@
 .Movie-List-Poster{
     border-radius: 7px;
-    width:175px
+    width:175px;
+    height: 275px;
+    object-fit: cover;
 }
 
 
