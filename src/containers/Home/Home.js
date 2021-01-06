@@ -18,7 +18,7 @@ class Home extends Component{
                 </div>
                 <div>
                     <GenreList
-                        popularList={this.props.popularMovies}
+                        movieList={this.props.popularMovies}
                         title='Popular'
                         clicked={this.goDetail}
                     />

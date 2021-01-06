@@ -9,8 +9,8 @@ const genreList = props => (
         <p className='Title'>{props.title} Movies</p>
         <div className='List-Container'>
             {
-                 props.popularList.results
-                     ? props.popularList.results.map(item => (
+                 props.movieList.results
+                     ? props.movieList.results.map(item => (
                          <div onClick={()=> props.clicked()} className='Movie-Container'>
                              <div
                                  className='Genre-Poster-Img'
