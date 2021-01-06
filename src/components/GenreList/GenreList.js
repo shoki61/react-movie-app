@@ -13,13 +13,11 @@ const genreList = props => (
                      ? props.popularList.results.map(item => (
                          <div onClick={()=> props.clicked()} className='Movie-Container'>
                              <div
-                                style={{
-                                    background:`url('https://image.tmdb.org/t/p/w500${item.poster_path}') no-repeat center`,
-                                    backgroundSize:'cover',
-                                    borderRadius:7,
-                                    width:175,
-                                    height:265
-                                }}
+                                 className='Genre-Poster-Img'
+                                 style={{
+                                     background:`url('https://image.tmdb.org/t/p/w500${item.poster_path}') no-repeat center`,
+                                     backgroundSize: 'cover'
+                                 }}
                              >
                              </div>
                              <div className='Movie-Vote-Container'>
