@@ -5,6 +5,7 @@ import {BsArrowRightShort} from 'react-icons/bs'
 
 import './Slide.css';
 import Button from '../../UI/Button/Button';
+import genresData from '../../../helper/genres.json';
 
 
 
@@ -14,6 +15,8 @@ const slide = props => {
         <div>
             <div className='slide-container'>
                 <p>{JSON.stringify(props.filteredPopular)}</p>
+                ********************
+                <p>{JSON.stringify(genresData.genres[0].name)}</p>
                 {
                     props.filteredPopular ?
                         <Slide>
@@ -56,10 +59,11 @@ const slide = props => {
                                                         {item.movie.overview}
                                                     </p>
                                                     <ul>
-                                                        <li className='Genres'>Action,</li>
-                                                        <li className='Genres'>Adventure,</li>
-                                                        <li className='Genres'>Drama,</li>
-                                                        <li className='Genres'>Fantasy</li>
+                                                        {
+                                                            item.movie.genre_ids.map(genre=>(
+                                                                <li className='Genres'>{genresData.genres.filter(item => item.id === genre)[0].name}<span>,</span></li>
+                                                            ))
+                                                        }
                                                     </ul>
                                                     <Button btnType='Go-Detail'>
                                                         Go Detail <BsArrowRightShort style={{fontSize: 20}}/>

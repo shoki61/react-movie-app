@@ -96,6 +96,10 @@
     color:#fff
 }
 
+.Genres:last-child span{
+    display: none;
+}
+
 .Content-Right ul {
     display: flex;
     list-style: none;
