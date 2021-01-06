@@ -6,11 +6,14 @@ import Button from '../Button/Button';
 
 const pageButtons = props => (
     <div className='Page-Button-Container'>
+        {
+            props.page > 1 &&
+            <Button btnType='Page-Button'>
+                <BsArrowLeftShort style={{fontSize:20}}/> Page {props.page-1}
+            </Button>
+        }
         <Button btnType='Page-Button'>
-            <BsArrowLeftShort style={{fontSize:20}}/> Previous
-        </Button>
-        <Button btnType='Page-Button'>
-            Next <BsArrowRightShort style={{fontSize:20}}/>
+            Page {props.page+1} <BsArrowRightShort style={{fontSize:20}}/>
         </Button>
     </div>
 );

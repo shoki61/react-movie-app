@@ -34,7 +34,7 @@ const genreList = props => (
                      : <Spinner/>
             }
         </div>
-        <PageButton/>
+        <PageButton page={props.movieList.page}/>
     </div>
 );
 
