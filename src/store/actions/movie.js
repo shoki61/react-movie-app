@@ -23,12 +23,30 @@ const popularMoviesFail = () => {
 };
 
 
+const filteredMostPopular = data => {
+    return{
+        type: actionTypes.FILTERED_MOST_POPULAR,
+        filteredMostPopular: data
+    };
+};
+
+
 const getPopularMovies = () => {
     return dispatch => {
         dispatch(popularMoviesStart());
         axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=1`)
             .then(response=>{
                 dispatch(popularMoviesSuccess(response.data))
+                const temp = [];
+                response.data.results.filter(item => {
+                    if(item.vote_average > 7.5){
+                        temp.push({
+                            movie:item
+                        })
+                    };
+                });
+                dispatch(filteredMostPopular(temp));
+                console.log(temp);
             })
             .catch(error=>{
                 dispatch(popularMoviesFail())

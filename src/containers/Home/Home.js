@@ -12,7 +12,9 @@ class Home extends Component{
         return(
             <div className='Home'>
                 <div className='Most-Popular'>
-                    <Slide clicked={this.goDetail}/>
+                    <Slide
+                        filteredPopular={this.props.filteredPopular}
+                        clicked={this.goDetail}/>
                 </div>
                 <div>
                     <GenreList
@@ -28,7 +30,8 @@ class Home extends Component{
 
 const mapStateToProps = state => {
     return {
-        popularMovies:state.movie.popularMovies
+        popularMovies:state.movie.popularMovies,
+        filteredPopular: state.movie.filteredMostPopular
     };
 };
 

@@ -4,118 +4,76 @@ import 'react-slideshow-image/dist/styles.css';
 import {BsArrowRightShort} from 'react-icons/bs'
 
 import './Slide.css';
-import img from '../../../assets/poster.jpg';
-import img1 from '../../../assets/backdrop.jpg';
 import Button from '../../UI/Button/Button';
 
 
 
 const slide = props => {
+    console.log(props.filteredPopular)
     return(
-        <div className='slide-container'>
-            <Slide>
-                <div
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        backgroundImage: `url(${img1})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'right -150px top'
-                    }}
-                    className='each-slide'
-                >
-                    <div className='Content'>
-                        <div className='Opacity'>
-                            <div className='Content-Left'>
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${img})`,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: 'cover'
-                                    }}
-                                    className='Poster-Image'>
-                                </div>
-                            </div>
-                            <div className='Content-Right'>
-                                <p className='Movie-Name'>The Mandalorian <span className='Release-Date'> (2020)</span></p>
-                                <div className='Vote-Container'>
-                                    <p className='Star-Icon'>
-                                        <i className='fas fa-star'/>
-                                    </p>
-                                    <div>
-                                        <p className='Vote-Average'>8.2<sup className='Vote-Count'>(536)</sup></p>
+        <div>
+            <div className='slide-container'>
+                <p>{JSON.stringify(props.filteredPopular)}</p>
+                {
+                    props.filteredPopular ?
+                        <Slide>
+                            {
+                                props.filteredPopular.map(item => (
+                                    <div
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            backgroundImage: `url('https://image.tmdb.org/t/p/w500${item.movie.backdrop_path}')`,
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'right -150px top'
+                                        }}
+                                        className='each-slide'
+                                    >
+                                        <div className='Content'>
+                                            <div className='Opacity'>
+                                                <div className='Content-Left'>
+                                                    <div
+                                                        style={{
+                                                            backgroundImage: `url('https://image.tmdb.org/t/p/w500${item.movie.poster_path}')`,
+                                                            backgroundRepeat: 'no-repeat',
+                                                            backgroundSize: 'cover'
+                                                        }}
+                                                        className='Poster-Image'>
+                                                    </div>
+                                                </div>
+                                                <div className='Content-Right'>
+                                                    <p className='Movie-Name'>{item.movie.title} <span className='Release-Date'> ({item.movie.release_date.slice(0,4)})</span></p>
+                                                    <div className='Vote-Container'>
+                                                        <p className='Star-Icon'>
+                                                            <i className='fas fa-star'/>
+                                                        </p>
+                                                        <div>
+                                                            <p className='Vote-Average'>{item.movie.vote_average}<sup className='Vote-Count'>({item.movie.vote_count})</sup></p>
+                                                        </div>
+                                                    </div>
+                                                    <p className='Overview'>
+                                                        {item.movie.overview}
+                                                    </p>
+                                                    <ul>
+                                                        <li className='Genres'>Action,</li>
+                                                        <li className='Genres'>Adventure,</li>
+                                                        <li className='Genres'>Drama,</li>
+                                                        <li className='Genres'>Fantasy</li>
+                                                    </ul>
+                                                    <Button btnType='Go-Detail'>
+                                                        Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <p className='Overview'>
-                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A
-                                    lone gunfighter makes his way through the outer reaches, earning his keep as a bounty
-                                    hunter.
-                                </p>
-                                <ul>
-                                    <li className='Genres'>Action,</li>
-                                    <li className='Genres'>Adventure,</li>
-                                    <li className='Genres'>Drama,</li>
-                                    <li className='Genres'>Fantasy</li>
-                                </ul>
-                                <Button btnType='Go-Detail'>
-                                    Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        background: `url(${img1}) no-repeat`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'right -150px top'
-                    }}
-                    className='each-slide'
-                >
-                    <div className='Content'>
-                        <div className='Opacity'>
-                            <div className='Content-Left'>
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${img})`,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: 'cover'
-                                    }}
-                                    className='Poster-Image'>
-                                </div>
-                            </div>
-                            <div className='Content-Right'>
-                                <p className='Movie-Name'>The Mandalorian <span className='Release-Date'> (2020)</span></p>
-                                <div className='Vote-Container'>
-                                    <p className='Star-Icon'>
-                                        <i className='fas fa-star'> </i>
-                                    </p>
-                                    <div>
-                                        <p className='Vote-Average'>8.2<sup className='Vote-Count'>(536)</sup></p>
-                                    </div>
-                                </div>
-                                <p className='Overview'>
-                                    After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A
-                                    lone gunfighter makes his way through the outer reaches, earning his keep as a bounty
-                                    hunter.
-                                </p>
-                                <ul>
-                                    <li className='Genres'>Action,</li>
-                                    <li className='Genres'>Adventure,</li>
-                                    <li className='Genres'>Drama,</li>
-                                    <li className='Genres'>Fantasy</li>
-                                </ul>
-                                <Button clicked={()=> props.clicked()} btnType='Go-Detail'>
-                                    Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Slide>
+                                ))
+                            }
+                        </Slide>
+                        : <p>yok</p>
+                }
+            </div>
         </div>
     )
 };
