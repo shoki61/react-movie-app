@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Navigations.css';
 import NavigationItem from './NavigationItem/NavigationItem';
+import genresData from '../../data/genres.json';
 
 const navigations = () => (
     <div className='Navigation'>
@@ -18,9 +19,11 @@ const navigations = () => (
             <a href="#">Top Rated</a>
         </NavigationItem>
         <NavigationItem title='Genres'>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            {
+                genresData.genres.map(genre => (
+                    <a href="#">{genre.name}</a>
+                ))
+            }
         </NavigationItem>
     </div>
 );

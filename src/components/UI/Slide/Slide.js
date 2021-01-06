@@ -9,7 +9,6 @@ import genresData from '../../../data/genres.json';
 import Spinner from '../Spinner/Spinner';
 
 
-
 const slide = props => {
     return(
         <div>
