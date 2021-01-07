@@ -11,6 +11,11 @@
     width: 80%;
 }
 
+.Production-Companies-Logo{
+    width: 100px;
+    height:100px;
+}
+
 .Detail-Left{
     width: 35%;
     display: flex;
