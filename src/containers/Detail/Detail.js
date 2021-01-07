@@ -9,6 +9,7 @@ import './Detail.css';
 import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
+import languagesData from '../../data/languages.json';
 
 class Detail extends Component {
 
@@ -55,7 +56,7 @@ class Detail extends Component {
                         <div style={{display:'flex',width:'50%',justifyContent:'space-between'}}>
                             <div>
                                 <p className='Detail-Title'>Original Language</p>
-                                <p className='Detail-Info'>{this.props.movieDetail.original_language}</p>
+                                <p className='Detail-Info'>{languagesData.languages.filter(item => item.iso_639_1 === this.props.movieDetail.original_language)[0].english_name}</p>
                             </div>
                             <div>
                                 <p className='Detail-Title'>Budged</p>
