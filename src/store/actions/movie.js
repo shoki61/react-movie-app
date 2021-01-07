@@ -51,6 +51,19 @@ const getMovieDetailFail = () => {
     };
 };
 
+const getCredits = data => {
+    return {
+        type: actionTypes.CREDITS,
+        credits: data
+    };
+};
+
+const getExternalID = data => {
+    return {
+        type: actionTypes.EXTERNAL_ID,
+        externalID: data
+    };
+};
 
 const extractMostPopular = () => {
     return dispatch => {
@@ -91,6 +104,16 @@ const getMovieDetail = movie_id =>{
          dispatch(getMovieDetailStart());
          axios.get(`/movie/${movie_id}?api_key=${APIKey}&language=en-US`)
              .then(response=>{
+                 axios.get(`/movie/${movie_id}/credits?api_key=${APIKey}&language=en-US`)
+                     .then(response => {
+                         dispatch(getCredits(response.data))
+                     })
+                     .catch(error => error)
+                 axios.get(`/movie/${movie_id}/external_ids?api_key=${APIKey}`)
+                     .then(response => {
+                         dispatch(getExternalID(response.data))
+                     })
+                     .catch(error => error)
                  dispatch(getMovieDetailSuccess(response.data));
              })
              .catch(error=>{

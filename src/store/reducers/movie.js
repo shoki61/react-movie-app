@@ -4,6 +4,8 @@ import { updateObject } from '../../helper/utility';
 const initialState = {
     searchTitle:null,
     movieDetail:null,
+    credits:null,
+    externalID: null,
     popularMovies:[],
     filteredMostPopular:null,
     page:1,
@@ -29,6 +31,12 @@ const reducer = ( state = initialState, action ) => {
             });
         case actionTypes.GET_POPULAR_MOVIES_FAIL:
             return updateObject(state, {loading:null, error:true});
+
+        case actionTypes.CREDITS:
+            return updateObject(state, {credits: action.credits});
+
+        case actionTypes.EXTERNAL_ID:
+            return updateObject(state,{externalID: action.externalID})
 
         case actionTypes.GET_MOVIE_DETAIL_START:
             return updateObject(state, {loading:true,error:null});
