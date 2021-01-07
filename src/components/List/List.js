@@ -20,7 +20,6 @@ const list = props => (
                                 <p className='List-Name'>{item.name}</p>
                                 { item.character?<p className='List-who'>{item.character}</p>:null}
                                 { item.department?<p className='List-who'>{item.department}</p>:null}
-                                { item.character?<p className='List-who'>{item.character}</p>:null}
                             </div>
                         </div>
                     ))

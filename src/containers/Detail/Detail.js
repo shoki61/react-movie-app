@@ -109,29 +109,42 @@ class Detail extends Component {
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>
-                                <div>
-                                    <List
-                                        clicked={this.goPersonalInformation}
-                                        title='Cast'
-                                        count={this.props.credits.cast.length}
-                                        data={this.props.credits.cast}
-                                    />
-                                </div>
-                                <div>
-                                    <List
-                                        title='Crew'
-                                        count={this.props.credits.crew.length}
-                                        data={this.props.credits.crew}
-                                    />
-                                </div>
-                                <div>
-                                    <List
-                                        override='Production-Companies-Logo'
-                                        title='Production Companies'
-                                        count={this.props.movieDetail.production_companies.length}
-                                        productionCompanies={this.props.movieDetail.production_companies}
-                                    />
-                                </div>
+                                {
+                                    this.props.credits.cast.length
+                                        ?<div>
+                                            <List
+                                                clicked={this.goPersonalInformation}
+                                                title='Cast'
+                                                count={this.props.credits.cast.length}
+                                                data={this.props.credits.cast}
+                                            />
+                                        </div>
+                                        :null
+                                }
+                                {
+                                    this.props.credits.crew.length
+                                        ?<div>
+                                            <List
+                                                title='Crew'
+                                                count={this.props.credits.crew.length}
+                                                data={this.props.credits.crew}
+                                            />
+                                        </div>
+                                        :null
+                                }
+
+                                {
+                                    this.props.movieDetail.production_companies.length
+                                        ?<div>
+                                            <List
+                                                override='Production-Companies-Logo'
+                                                title='Production Companies'
+                                                count={this.props.movieDetail.production_companies.length}
+                                                productionCompanies={this.props.movieDetail.production_companies}
+                                            />
+                                        </div>
+                                        :null
+                                }
                             </div>
                         </div>
                         :<Spinner/>
