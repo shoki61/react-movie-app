@@ -21,7 +21,7 @@ const navigations = () => (
         <NavigationItem title='Genres'>
             {
                 genresData.genres.map(genre => (
-                    <a href="#">{genre.name}</a>
+                    <a href="#" key={genre.id}>{genre.name}</a>
                 ))
             }
         </NavigationItem>

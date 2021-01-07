@@ -19,6 +19,7 @@ const slide = props => {
                             {
                                 props.filteredPopular.map(item => (
                                     <div
+                                        key={item.movie.id}
                                         style={{
                                             width: '100%',
                                             height: '100%',
@@ -57,7 +58,7 @@ const slide = props => {
                                                     <ul>
                                                         {
                                                             item.movie.genre_ids.map(genre=>(
-                                                                <li className='Genres'>{genresData.genres.filter(item => item.id === genre)[0].name}<span>,</span></li>
+                                                                <li key={genre} className='Genres'>{genresData.genres.filter(item => item.id === genre)[0].name}<span>,</span></li>
                                                             ))
                                                         }
                                                     </ul>

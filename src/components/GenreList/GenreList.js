@@ -12,7 +12,11 @@ const genreList = props => (
             {
                  props.movieList.results
                      ? props.movieList.results.map(item => (
-                         <div onClick={()=> props.clicked()} className='Movie-Container'>
+                         <div
+                             key={item.id}
+                             onClick={()=> props.clicked()}
+                             className='Movie-Container'
+                         >
                              <Image
                                  src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                                  alt='image'
