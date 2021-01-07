@@ -117,23 +117,21 @@ class Detail extends Component {
                                         data={this.props.credits.cast}
                                     />
                                 </div>
-                                {/*<div>*/}
-                                {/*    <List*/}
-                                {/*        title='Crew'*/}
-                                {/*        count={16}*/}
-                                {/*        src={require('../../assets/christopherNolan.jpg').default}*/}
-                                {/*        name='Christopher Nolan'*/}
-                                {/*        who='Director, Writer'*/}
-                                {/*    />*/}
-                                {/*</div>*/}
-                                {/*<div>*/}
-                                {/*    <List*/}
-                                {/*        title='Production Companies'*/}
-                                {/*        count={8}*/}
-                                {/*        src={require('../../assets/christopherNolan.jpg').default}*/}
-                                {/*        name='Syncopy'*/}
-                                {/*    />*/}
-                                {/*</div>*/}
+                                <div>
+                                    <List
+                                        title='Crew'
+                                        count={this.props.credits.crew.length}
+                                        data={this.props.credits.crew}
+                                    />
+                                </div>
+                                <div>
+                                    <List
+                                        override='Production-Companies-Logo'
+                                        title='Production Companies'
+                                        count={this.props.movieDetail.production_companies.length}
+                                        productionCompanies={this.props.movieDetail.production_companies}
+                                    />
+                                </div>
                             </div>
                         </div>
                         :<Spinner/>

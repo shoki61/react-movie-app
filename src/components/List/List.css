@@ -39,10 +39,16 @@
     margin-bottom: 3px;
     font-size: 14px;
     font-family: "Source Sans Pro SemiBold",sans-serif;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-align: center;
 }
 
 .List-who{
     font-size: 13px;
     color: #6a6a6a;
     font-family: "Source Sans Pro",sans-serif;
+    text-align: center;
 }

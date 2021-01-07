@@ -8,19 +8,34 @@ const list = props => (
         <p className='List-Title'>{props.title}<span className='List-Count'>({props.count})</span></p>
         <div className='List-Items-Container'>
             {
-                props.data.map(item => (
-                    <div onClick={()=> props.clicked()} className='List-Item-Container'>
-                        <Image
-                            src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
-                            alt='image'
-                            className={['List-Image',props.override].join(' ')}
-                        />
-                        <div>
-                            <p className='List-Name'>{item.name}</p>
-                            <p className='List-who'>{item.known_for_department}</p>
+                props.data ?
+                    props.data.map(item => (
+                        <div onClick={()=> props.clicked()} className='List-Item-Container'>
+                            <Image
+                                src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                                alt='image'
+                                className={['List-Image',props.override].join(' ')}
+                            />
+                            <div>
+                                <p className='List-Name'>{item.name}</p>
+                                { item.character?<p className='List-who'>{item.character}</p>:null}
+                                { item.department?<p className='List-who'>{item.department}</p>:null}
+                                { item.character?<p className='List-who'>{item.character}</p>:null}
+                            </div>
                         </div>
-                    </div>
-                ))
+                    ))
+                    :props.productionCompanies.map(item => (
+                        <div onClick={()=> props.clicked()} className='List-Item-Container'>
+                            <Image
+                                src={`https://image.tmdb.org/t/p/w500${item.logo_path}`}
+                                alt='image'
+                                className={['List-Image',props.override].join(' ')}
+                            />
+                            <div>
+                                <p className='List-Name'>{item.name}</p>
+                            </div>
+                        </div>
+                    ))
             }
         </div>
     </div>
