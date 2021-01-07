@@ -14,7 +14,7 @@ const genreList = props => (
                      ? props.movieList.results.map(item => (
                          <div
                              key={item.id}
-                             onClick={()=> props.clicked()}
+                             onClick={()=> props.clicked(item.id)}
                              className='Movie-Container'
                          >
                              <Image

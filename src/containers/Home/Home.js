@@ -7,7 +7,10 @@ import GenreList from '../../components/GenreList/GenreList';
 import * as actions from '../../store/actions/index';
 
 class Home extends Component{
-    goDetail = () => this.props.history.push('/detail');
+    goDetail = id => {
+        this.props.onGetMovieDetail(id);
+        this.props.history.push('/detail')
+    };
 
     nextPage = () => this.props.onGetPopularMovie(this.props.page+1);
 
@@ -46,7 +49,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetPopularMovie: value => dispatch(actions.getPopularMovies(value))
+        onGetPopularMovie: value => dispatch(actions.getPopularMovies(value)),
+        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id))
     };
 };
 

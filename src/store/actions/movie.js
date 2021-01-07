@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 import { APIKey } from '../../env';
+import {act} from "@testing-library/react";
 
 
 const popularMoviesStart = () => {
@@ -31,6 +32,25 @@ const filteredMostPopular = data => {
     };
 };
 
+const getMovieDetailStart = () => {
+    return {
+        type: actionTypes.GET_MOVIE_DETAIL_START
+    };
+};
+
+const getMovieDetailSuccess = data => {
+    return {
+        type: actionTypes.GET_MOVIE_DETAIL_SUCCESS,
+        movieDetail: data
+    };
+};
+
+const getMovieDetailFail = () => {
+    return {
+        type: actionTypes.GET_MOVIE_DETAIL_FAIL
+    };
+};
+
 
 const extractMostPopular = () => {
     return dispatch => {
@@ -49,7 +69,7 @@ const extractMostPopular = () => {
             .catch(error=>{
             });
     };
-}
+};
 
 
 const getPopularMovies = value => {
@@ -66,8 +86,22 @@ const getPopularMovies = value => {
 };
 
 
+const getMovieDetail = movie_id =>{
+     return dispatch => {
+         dispatch(getMovieDetailStart());
+         axios.get(`/movie/${movie_id}?api_key=${APIKey}&language=en-US`)
+             .then(response=>{
+                 dispatch(getMovieDetailSuccess(response.data));
+             })
+             .catch(error=>{
+                 dispatch(getMovieDetailFail());
+             });
+     };
+};
+
 
 export {
     getPopularMovies,
-    extractMostPopular
+    extractMostPopular,
+    getMovieDetail
 };

@@ -1,4 +1,5 @@
 export {
     getPopularMovies,
-    extractMostPopular
+    extractMostPopular,
+    getMovieDetail
 } from './movie';
