@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { SiImdb } from 'react-icons/si';
 import { ImFacebook } from 'react-icons/im';
 import { BsPlayFill } from 'react-icons/bs';
@@ -23,43 +24,46 @@ class Detail extends Component {
                         <Image
                             className='Detail-Poster'
                             alt='image'
-                            src={require('../../assets/poster.jpg').default}
+                            src={`https://image.tmdb.org/t/p/w500${this.props.movieDetail.poster_path}`}
                         />
                     </div>
                     <div className='Detail-Right'>
+                        <p>{JSON.stringify(this.props.movieDetail)}</p>
                         <div className='Name-Container'>
                             <div>
-                                <p className='Name'>Mandalorian</p>
-                                <p className='Detail-Tag-Line'>Time runs out.</p>
+                                <p className='Name'>{this.props.movieDetail.title}</p>
+                                <p className='Detail-Tag-Line'>{this.props.movieDetail.tagline}</p>
                             </div>
-                            <span className='Detail-Release-Date'>2020.05.26 / <AiFillPlayCircle style={{fontSize:11}}/> 150 min</span>
+                            <span className='Detail-Release-Date'>{this.props.movieDetail.release_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime} min</span>
                         </div>
                         <div className='Detail-Average'>
-                            <i className='fas fa-star'/>8.7 <div className='Detail-Average-Count'>/503</div>
+                            <i className='fas fa-star'/>{this.props.movieDetail.vote_average} <div className='Detail-Average-Count'>/{this.props.movieDetail.vote_count}</div>
                         </div>
                         <ul>
-                            <li onClick={()=> this.goGenre()}>Action,</li>
-                            <li>Fantasy,</li>
-                            <li>Drama</li>
+                            {
+                                this.props.movieDetail.genres.map(genre => (
+                                    <li key={genre.id} onClick={()=> this.goGenre(genre.name)}>{genre.name}<span>,</span></li>
+                                ))
+                            }
                         </ul>
                         <div>
                             <p className='Detail-Title'>Overview</p>
                             <p className='Detail-Overview'>
-                                Armed with only one word - Tenet - and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.
+                                {this.props.movieDetail.overview}
                             </p>
                         </div>
                         <div style={{display:'flex',width:'50%',justifyContent:'space-between'}}>
                             <div>
                                 <p className='Detail-Title'>Original Language</p>
-                                <p className='Detail-Info'>English</p>
+                                <p className='Detail-Info'>{this.props.movieDetail.original_language}</p>
                             </div>
                             <div>
                                 <p className='Detail-Title'>Budged</p>
-                                <p className='Detail-Info'>$205,000,000.00</p>
+                                <p className='Detail-Info'>${this.props.movieDetail.budget}</p>
                             </div>
                             <div>
                                 <p className='Detail-Title'>Revenue</p>
-                                <p className='Detail-Info'>$359,900,000.00</p>
+                                <p className='Detail-Info'>${this.props.movieDetail.revenue}</p>
                             </div>
                         </div>
                         <div>
@@ -78,7 +82,7 @@ class Detail extends Component {
                                 </Link>
                             </div>
                             <div className='External-Id' title='IMDb'>
-                                <Link>
+                                <Link url={`https://www.imdb.com/title/${this.props.movieDetail.imdb_id}`}>
                                     <SiImdb/>
                                 </Link>
                             </div>
@@ -134,4 +138,10 @@ class Detail extends Component {
     };
 };
 
-export default Detail;
+const mapStateToProps = state => {
+    return{
+        movieDetail: state.movie.movieDetail
+    };
+};
+
+export default connect(mapStateToProps)(Detail);

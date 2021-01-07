@@ -34,7 +34,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    color: #34688f;
+    color:#34688f;
     border:1px solid #34688f;
     margin-right:15px;
     cursor: pointer;
@@ -112,9 +112,13 @@
     color: #999;
     font-family: "Montserrat SemiBold", sans-serif;
     font-size: 12px;
-    margin-right: 10px;
+    margin-right: 7px;
     transition: all .2s ease-in-out;
     cursor: pointer;
+}
+
+li:last-child span{
+    display: none;
 }
 
 .Detail-Right li:hover {
