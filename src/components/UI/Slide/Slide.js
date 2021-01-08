@@ -62,7 +62,7 @@ const slide = props => {
                                                             ))
                                                         }
                                                     </ul>
-                                                    <Button btnType='Go-Detail'>
+                                                    <Button clicked={() => props.clicked(item.movie.id)} btnType='Go-Detail'>
                                                         Go Detail <BsArrowRightShort style={{fontSize: 20}}/>
                                                     </Button>
                                                 </div>
