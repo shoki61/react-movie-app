@@ -74,6 +74,7 @@ class Detail extends Component {
                                         <p className='Detail-Title'>Director</p>
                                         <p className='Detail-Info'>{this.props.credits.crew.filter(item => item.job === 'Director')[0].name}</p>
                                     </div>
+                                    <p>{JSON.stringify(this.props.externalID)}</p>
                                     <div className='External-Ids-Container'>
                                         <div className='External-Id' title='Trailer'>
                                             <Link >
@@ -81,7 +82,7 @@ class Detail extends Component {
                                             </Link>
                                         </div>
                                         <div className='External-Id' title='Website'>
-                                            <Link >
+                                            <Link url={`${this.props.movieDetail.homepage}`}>
                                                 <AiOutlineLink/>
                                             </Link>
                                         </div>
@@ -91,17 +92,17 @@ class Detail extends Component {
                                             </Link>
                                         </div>
                                         <div className='External-Id' title='Facebook'>
-                                            <Link >
+                                            <Link url={`https://www.facebook.com/${this.props.externalID.facebook_id}`}>
                                                 <ImFacebook/>
                                             </Link>
                                         </div>
                                         <div className='External-Id' title='Instagram'>
-                                            <Link >
+                                            <Link url={`https://www.instagram.com/${this.props.externalID.instagram_id}`}>
                                                 <AiFillInstagram/>
                                             </Link>
                                         </div>
                                         <div className='External-Id' title='Twitter'>
-                                            <Link >
+                                            <Link url={`https://twitter.com/${this.props.externalID.twitter_id}`}>
                                                 <AiOutlineTwitter/>
                                             </Link>
                                         </div>
