@@ -74,39 +74,62 @@ class Detail extends Component {
                                         <p className='Detail-Title'>Director</p>
                                         <p className='Detail-Info'>{this.props.credits.crew.filter(item => item.job === 'Director')[0].name}</p>
                                     </div>
-                                    <p>{JSON.stringify(this.props.externalID)}</p>
-                                    <div className='External-Ids-Container'>
-                                        <div className='External-Id' title='Trailer'>
-                                            <Link >
-                                                <BsPlayFill/>
-                                            </Link>
-                                        </div>
-                                        <div className='External-Id' title='Website'>
-                                            <Link url={`${this.props.movieDetail.homepage}`}>
-                                                <AiOutlineLink/>
-                                            </Link>
-                                        </div>
-                                        <div className='External-Id' title='IMDb'>
-                                            <Link url={`https://www.imdb.com/title/${this.props.movieDetail.imdb_id}`}>
-                                                <SiImdb/>
-                                            </Link>
-                                        </div>
-                                        <div className='External-Id' title='Facebook'>
-                                            <Link url={`https://www.facebook.com/${this.props.externalID.facebook_id}`}>
-                                                <ImFacebook/>
-                                            </Link>
-                                        </div>
-                                        <div className='External-Id' title='Instagram'>
-                                            <Link url={`https://www.instagram.com/${this.props.externalID.instagram_id}`}>
-                                                <AiFillInstagram/>
-                                            </Link>
-                                        </div>
-                                        <div className='External-Id' title='Twitter'>
-                                            <Link url={`https://twitter.com/${this.props.externalID.twitter_id}`}>
-                                                <AiOutlineTwitter/>
-                                            </Link>
-                                        </div>
-                                    </div>
+                                    {
+                                        this.props.externalID ?
+                                            <div className='External-Ids-Container'>
+                                                <div className='External-Id' title='Trailer'>
+                                                    <Link >
+                                                        <BsPlayFill/>
+                                                    </Link>
+                                                </div>
+                                                {
+                                                    this.props.movieDetail.homepage
+                                                        ?<div className='External-Id' title='Website'>
+                                                            <Link url={`${this.props.movieDetail.homepage}`}>
+                                                                <AiOutlineLink/>
+                                                            </Link>
+                                                        </div>
+                                                        :null
+                                                }
+                                                {
+                                                    this.props.externalID.imdb_id
+                                                        ?<div className='External-Id' title='IMDb'>
+                                                            <Link url={`https://www.imdb.com/title/${this.props.externalID.imdb_id}`}>
+                                                                <SiImdb/>
+                                                            </Link>
+                                                        </div>
+                                                        :null
+                                                }
+                                                {
+                                                    this.props.externalID.facebook_id
+                                                        ?<div className='External-Id' title='Facebook'>
+                                                            <Link url={`https://www.facebook.com/${this.props.externalID.facebook_id}`}>
+                                                                <ImFacebook/>
+                                                            </Link>
+                                                        </div>
+                                                        :null
+                                                }
+                                                {
+                                                    this.props.externalID.instagram_id
+                                                        ?<div className='External-Id' title='Instagram'>
+                                                            <Link url={`https://www.instagram.com/${this.props.externalID.instagram_id}`}>
+                                                                <AiFillInstagram/>
+                                                            </Link>
+                                                        </div>
+                                                        :null
+                                                }
+                                                {
+                                                    this.props.externalID.twitter_id
+                                                        ?<div className='External-Id' title='Twitter'>
+                                                            <Link url={`https://twitter.com/${this.props.externalID.twitter_id}`}>
+                                                                <AiOutlineTwitter/>
+                                                            </Link>
+                                                        </div>
+                                                        :null
+                                                }
+                                            </div>
+                                            :null
+                                    }
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>
