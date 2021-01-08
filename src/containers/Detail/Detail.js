@@ -72,7 +72,7 @@ class Detail extends Component {
                                     </div>
                                     <div>
                                         <p className='Detail-Title'>Director</p>
-                                        <p className='Detail-Info'>Christopher Nolan</p>
+                                        <p className='Detail-Info'>{this.props.credits.crew.filter(item => item.job === 'Director')[0].name}</p>
                                     </div>
                                     <div className='External-Ids-Container'>
                                         <div className='External-Id' title='Trailer'>
