@@ -10,6 +10,7 @@ const personalInformationStart = () => {
 };
 
 const personalInformationSuccess = data => {
+    console.log(data)
     return{
         type: actionTypes.GET_PERSON_DETAIL_SUCCESS,
         personalInformation: data
@@ -27,7 +28,15 @@ const getPersonalInformation = id => {
         dispatch(personalInformationStart());
         axios.get(`/person/${id}?api_key=${APIKey}&language=en-US`)
             .then(response => {
-                dispatch(personalInformationSuccess(response.data))
+                const temp = [];
+                axios.get(`/person/${id}/external_ids?api_key=${APIKey}&language=en-US`)
+                    .then(res=>{
+                        temp.push({
+                            externalID: res.data,
+                            personalInfo:response.data
+                        })
+                        dispatch(personalInformationSuccess(temp))
+                    })
             })
             .catch(error => personalInformationFail());
     };

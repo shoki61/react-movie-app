@@ -16,31 +16,31 @@ class PersonalInformation extends Component{
         return(
             <div className='Personal-Information'>
                 {
-                    this.props.personalInfo
+                    this.props.personalData
                         ?<div>
                             <div className='Personal-Information-Top'>
                                 <div className='Person-Image-Container'>
                                     <Image
                                         className='Person-Image'
-                                        src={`https://image.tmdb.org/t/p/w500${this.props.personalInfo.profile_path}`}
+                                        src={`https://image.tmdb.org/t/p/w500${this.props.personalData[0].personalInfo.profile_path}`}
                                     />
                                 </div>
                                 <div className='Person-Info-Container'>
-                                    <p className='Person-Name'>{this.props.personalInfo.name}<span className='Person-Job'>({this.props.personalInfo.known_for_department})</span></p>
-                                    <p className='Person-Birthday'>{this.props.personalInfo.birthday}</p>
+                                    <p className='Person-Name'>{this.props.personalData[0].personalInfo.name}<span className='Person-Job'>({this.props.personalData[0].personalInfo.known_for_department})</span></p>
+                                    <p className='Person-Birthday'>{this.props.personalData[0].personalInfo.birthday}</p>
                                     <div>
                                         <p className='Person-Title'>Biography</p>
                                         <p className='Person-Info'>
-                                            {this.props.personalInfo.biography}
+                                            {this.props.personalData[0].personalInfo.biography}
                                         </p>
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Place of Birth</p>
-                                        <p className='Person-Info'>{this.props.personalInfo.place_of_birth}</p>
+                                        <p className='Person-Info'>{this.props.personalData[0].personalInfo.place_of_birth}</p>
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Gender</p>
-                                        <p className='Person-Info'>{this.props.personalInfo.gender === 1 ? 'Female' : 'Male'}</p>
+                                        <p className='Person-Info'>{this.props.personalData[0].personalInfo.gender === 1 ? 'Female' : 'Male'}</p>
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Known Credits</p>
@@ -49,31 +49,51 @@ class PersonalInformation extends Component{
                                     <div>
                                         <p className='Person-Title'>Links</p>
                                         <div className='Person-ExternalID-Container'>
-                                            <div className='Person-External-Id' title='Website'>
-                                                <Link >
-                                                    <AiOutlineLink/>
-                                                </Link>
-                                            </div>
-                                            <div className='Person-External-Id' title='IMDb'>
-                                                <Link>
-                                                    <SiImdb/>
-                                                </Link>
-                                            </div>
-                                            <div className='Person-External-Id' title='Facebook'>
-                                                <Link >
-                                                    <ImFacebook/>
-                                                </Link>
-                                            </div>
-                                            <div className='Person-External-Id' title='Instagram'>
-                                                <Link >
-                                                    <AiFillInstagram/>
-                                                </Link>
-                                            </div>
-                                            <div className='Person-External-Id' title='Twitter'>
-                                                <Link >
-                                                    <AiOutlineTwitter/>
-                                                </Link>
-                                            </div>
+                                            {
+                                                this.props.personalData[0].personalInfo.homepage
+                                                    ?<div className='Person-External-Id' title='Website'>
+                                                        <Link url={this.props.personalData[0].personalInfo.homepage}>
+                                                            <AiOutlineLink/>
+                                                        </Link>
+                                                    </div>
+                                                    :null
+                                            }
+                                            {
+                                                this.props.personalData[0].personalInfo.imdb_id
+                                                    ?<div className='Person-External-Id' title='IMDb'>
+                                                        <Link url={`https://www.imdb.com/name/${this.props.personalData[0].externalID.imdb_id}`}>
+                                                            <SiImdb/>
+                                                        </Link>
+                                                    </div>
+                                                    :null
+                                            }
+                                            {
+                                                this.props.personalData[0].externalID.facebook_id
+                                                    ?<div className='Person-External-Id' title='Facebook'>
+                                                        <Link url={`https://www.facebook.com/${this.props.personalData[0].externalID.facebook_id}`}>
+                                                            <ImFacebook/>
+                                                        </Link>
+                                                    </div>
+                                                    :null
+                                            }
+                                            {
+                                                this.props.personalData[0].externalID.instagram_id
+                                                    ?<div className='Person-External-Id' title='Instagram'>
+                                                        <Link url={`https://www.instagram.com/${this.props.personalData[0].externalID.instagram_id}`}>
+                                                            <AiFillInstagram/>
+                                                        </Link>
+                                                    </div>
+                                                    :null
+                                            }
+                                            {
+                                                this.props.personalData[0].externalID.twitter_id
+                                                    ?<div className='Person-External-Id' title='Twitter'>
+                                                        <Link url={`https://twitter.com/${this.props.personalData[0].externalID.twitter_id}`}>
+                                                            <AiOutlineTwitter/>
+                                                        </Link>
+                                                    </div>
+                                                    :null
+                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +133,7 @@ class PersonalInformation extends Component{
 
 const mapStateToProps = state => {
     return {
-        personalInfo: state.person.personalInformation
+        personalData: state.person.personalInformation
     };
 };
 
