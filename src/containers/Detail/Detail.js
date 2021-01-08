@@ -191,10 +191,10 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchTOProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return{
         onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchTOProps)(Detail);
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

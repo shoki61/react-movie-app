@@ -10,12 +10,12 @@ import thunk from 'redux-thunk';
 
 
 import movieReducer from './store/reducers/movie';
-import peopleReducer from './store/reducers/person';
+import personReducer from './store/reducers/person';
 import searchResultReducer from './store/reducers/searchResult';
 
 const rootReducer = combineReducers({
     movie: movieReducer,
-    people: peopleReducer,
+    person: personReducer,
     result: searchResultReducer
 });
 

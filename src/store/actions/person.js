@@ -27,8 +27,7 @@ const getPersonalInformation = id => {
         dispatch(personalInformationStart());
         axios.get(`/person/${id}?api_key=${APIKey}&language=en-US`)
             .then(response => {
-                console.log(response.data)
-                personalInformationSuccess(response.data)
+                dispatch(personalInformationSuccess(response.data))
             })
             .catch(error => personalInformationFail());
     };
