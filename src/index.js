@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 
 
 import movieReducer from './store/reducers/movie';
-import peopleReducer from './store/reducers/people';
+import peopleReducer from './store/reducers/person';
 import searchResultReducer from './store/reducers/searchResult';
 
 const rootReducer = combineReducers({

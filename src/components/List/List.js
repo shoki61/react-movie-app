@@ -10,7 +10,7 @@ const list = props => (
             {
                 props.data ?
                     props.data.map(item => (
-                        <div onClick={()=> props.clicked()} className='List-Item-Container'>
+                        <div onClick={()=> props.clicked(item.id)} className='List-Item-Container'>
                             <Image
                                 src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
                                 alt='image'

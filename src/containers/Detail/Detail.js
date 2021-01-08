@@ -11,10 +11,14 @@ import Link from '../../components/UI/Link/Link';
 import List from '../../components/List/List';
 import languagesData from '../../data/languages.json';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import * as actions from '../../store/actions/index';
 
 class Detail extends Component {
 
-    goPersonalInformation = () => this.props.history.push('/personal-information');
+    goPersonalInformation = id => {
+        this.props.onGetPersonalInformation(id);
+        this.props.history.push('/personal-information');
+    };
 
     goGenre = () => this.props.history.push('/genre');
 
@@ -187,4 +191,10 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(Detail);
+const mapDispatchTOProps = dispatch => {
+    return{
+        onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchTOProps)(Detail);

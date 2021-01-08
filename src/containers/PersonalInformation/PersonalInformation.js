@@ -74,28 +74,28 @@ class PersonalInformation extends Component{
                     </div>
                 </div>
                 <div className='Personal-Information-Bottom'>
-                    <List
-                        clicked={this.goDetail}
-                        count={12}
-                        title='Known For'
-                        src={require('../../assets/poster.jpg').default}
-                        override='Person-Movie'
-                        name='Tenet'
-                    />
-                    <List
-                        count={58}
-                        title='Movies'
-                        src={require('../../assets/poster.jpg').default}
-                        override='Person-Movie'
-                        name='Tenet'
-                    />
-                    <List
-                        count={9}
-                        title='TV Shows'
-                        src={require('../../assets/poster.jpg').default}
-                        override='Person-Movie'
-                        name='Tenet'
-                    />
+                    {/*<List*/}
+                    {/*    clicked={this.goDetail}*/}
+                    {/*    count={12}*/}
+                    {/*    title='Known For'*/}
+                    {/*    src={require('../../assets/poster.jpg').default}*/}
+                    {/*    override='Person-Movie'*/}
+                    {/*    name='Tenet'*/}
+                    {/*/>*/}
+                    {/*<List*/}
+                    {/*    count={58}*/}
+                    {/*    title='Movies'*/}
+                    {/*    src={require('../../assets/poster.jpg').default}*/}
+                    {/*    override='Person-Movie'*/}
+                    {/*    name='Tenet'*/}
+                    {/*/>*/}
+                    {/*<List*/}
+                    {/*    count={9}*/}
+                    {/*    title='TV Shows'*/}
+                    {/*    src={require('../../assets/poster.jpg').default}*/}
+                    {/*    override='Person-Movie'*/}
+                    {/*    name='Tenet'*/}
+                    {/*/>*/}
                 </div>
             </div>
         );

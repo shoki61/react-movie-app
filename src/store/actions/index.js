@@ -3,3 +3,7 @@ export {
     extractMostPopular,
     getMovieDetail
 } from './movie';
+
+export {
+    getPersonalInformation
+} from './person';
