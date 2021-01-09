@@ -28,6 +28,7 @@ class PersonalInformation extends Component{
                                 <div className='Person-Info-Container'>
                                     <p className='Person-Name'>{this.props.personalData[0].personalInfo.name}<span className='Person-Job'>({this.props.personalData[0].personalInfo.known_for_department})</span></p>
                                     <p className='Person-Birthday'>{this.props.personalData[0].personalInfo.birthday}</p>
+                                    <p>{JSON.stringify(this.props.movieCredits)}////////{JSON.stringify(this.props.movieCredits)}</p>
                                     <div>
                                         <p className='Person-Title'>Biography</p>
                                         <p className='Person-Info'>
@@ -99,14 +100,13 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                {/*<List*/}
-                                {/*    clicked={this.goDetail}*/}
-                                {/*    count={12}*/}
-                                {/*    title='Known For'*/}
-                                {/*    src={require('../../assets/poster.jpg').default}*/}
-                                {/*    override='Person-Movie'*/}
-                                {/*    name='Tenet'*/}
-                                {/*/>*/}
+                                <List
+                                    data={this.props.movieCredits.cast}
+                                    clicked={this.goDetail}
+                                    count={12}
+                                    title='Known For'
+                                    override='Person-Movie'
+                                />
                                 {/*<List*/}
                                 {/*    count={58}*/}
                                 {/*    title='Movies'*/}
@@ -133,7 +133,9 @@ class PersonalInformation extends Component{
 
 const mapStateToProps = state => {
     return {
-        personalData: state.person.personalInformation
+        personalData: state.person.personalInformation,
+        movieCredits: state.person.personalMovieCredits,
+        TVCredits: state.person.personalTVCredits
     };
 };
 

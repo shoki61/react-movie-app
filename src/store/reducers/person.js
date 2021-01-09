@@ -3,6 +3,8 @@ import { updateObject } from "../../helper/utility";
 
 const initialState = {
     personalInformation:null,
+    personalMovieCredits:null,
+    personalTVCredits:null,
     error:null,
     loading:null
 };
@@ -21,6 +23,10 @@ const reducer = (state = initialState, action) => {
                 loading:null,
                 error:true
             });
+        case actionTypes.GET_PERSON_MOVIE_CREDITS:
+            return updateObject(state, {personalMovieCredits: action.movieCredits});
+        case actionTypes.GET_PERSON_TV_CREDITS:
+            return updateObject(state, {personalTVCredits: action.TVCredits});
         default: return state;
     };
 };
