@@ -12,12 +12,12 @@ const list = props => (
                     props.data.map(item => (
                         <div onClick={()=> props.clicked(item.id)} className='List-Item-Container'>
                             <Image
-                                src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
+                                src={`https://image.tmdb.org/t/p/w500${item.profile_path ? item.profile_path : item.poster_path}`}
                                 alt='image'
                                 className={['List-Image',props.override].join(' ')}
                             />
                             <div>
-                                <p className='List-Name'>{item.name}</p>
+                                <p className='List-Name'>{item.title}</p>
                                 { item.character?<p className='List-who'>{item.character}</p>:null}
                                 { item.department?<p className='List-who'>{item.department}</p>:null}
                             </div>
