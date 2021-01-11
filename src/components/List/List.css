@@ -16,6 +16,11 @@
     overflow-y: hidden;
 }
 
+.Person-Credits{
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
 .List-Title{
     font-size: 17px;
     font-family:"Montserrat SemiBold", sans-serif;

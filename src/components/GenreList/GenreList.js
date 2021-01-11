@@ -10,8 +10,8 @@ const genreList = props => (
         <p className='Title'>{props.title} Movies</p>
         <div className='List-Container'>
             {
-                 props.movieList.results
-                     ? props.movieList.results.map(item => (
+                 props.movieList
+                     ? props.movieList.map(item => (
                          <div
                              key={item.id}
                              onClick={()=> props.clicked(item.id)}
@@ -36,7 +36,7 @@ const genreList = props => (
                      : <Spinner/>
             }
         </div>
-        <PageButton next={props.nextPage} preview={props.previewPage} page={props.movieList.page}/>
+        <PageButton next={props.nextPage} preview={props.previewPage} page={props.page}/>
     </div>
 );
 
