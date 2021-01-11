@@ -7,8 +7,9 @@ import {ImFacebook} from "react-icons/im";
 import './PersonalInformation.css';
 import Image from '../../components/UI/Image/Image';
 import Link from "../../components/UI/Link/Link";
-import List from '../../components/List/List';
+import GenreList from '../../components/GenreList/GenreList';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import Genre from "../Genre/Genre";
 
 class PersonalInformation extends Component{
     goDetail = () => this.props.history.push('/detail');
@@ -28,7 +29,6 @@ class PersonalInformation extends Component{
                                 <div className='Person-Info-Container'>
                                     <p className='Person-Name'>{this.props.personalData[0].personalInfo.name}<span className='Person-Job'>({this.props.personalData[0].personalInfo.known_for_department})</span></p>
                                     <p className='Person-Birthday'>{this.props.personalData[0].personalInfo.birthday}</p>
-                                    <p>{JSON.stringify(this.props.movieCredits)}////////{JSON.stringify(this.props.movieCredits)}</p>
                                     <div>
                                         <p className='Person-Title'>Biography</p>
                                         <p className='Person-Info'>
@@ -100,13 +100,12 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                <List
-                                    data={this.props.movieCredits.cast}
-                                    clicked={this.goDetail}
-                                    count={12}
-                                    title='Known For'
-                                    override='Person-Movie'
+                                <GenreList
+                                    title={'Cast'}
+                                    movieList={this.props.movieCredits.cast}
+
                                 />
+                                {JSON.stringify(this.props.movieCredits)}
                                 {/*<List*/}
                                 {/*    count={58}*/}
                                 {/*    title='Movies'*/}
