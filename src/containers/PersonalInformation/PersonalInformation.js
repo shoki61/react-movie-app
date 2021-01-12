@@ -8,6 +8,7 @@ import './PersonalInformation.css';
 import Image from '../../components/UI/Image/Image';
 import Link from "../../components/UI/Link/Link";
 import GenreList from '../../components/GenreList/GenreList';
+import PersonalInfoList from '../../components/PersonalInformationList/PersonalInformationList';
 import List from '../../components/List/List';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
@@ -100,28 +101,10 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                {/*<GenreList*/}
-                                {/*    title={'Cast'}*/}
-                                {/*    movieList={this.props.movieCredits.cast}*/}
-
-                                {/*/>*/}
-                                {/*<GenreList*/}
-                                {/*    title={'Crew'}*/}
-                                {/*    movieList={this.props.movieCredits.crew}*/}
-                                {/*/>*/}
-                                <List
-                                    count={this.props.movieCredits.cast.length}
-                                    data={this.props.movieCredits.cast}
-                                    title='Movies'
-                                    override='Person-Movie'
+                                <PersonalInfoList
+                                    title='Cast'
                                 />
-                                {/*<List*/}
-                                {/*    count={9}*/}
-                                {/*    title='TV Shows'*/}
-                                {/*    src={require('../../assets/poster.jpg').default}*/}
-                                {/*    override='Person-Movie'*/}
-                                {/*    name='Tenet'*/}
-                                {/*/>*/}
+
                             </div>
                         </div>
                         :<Spinner/>

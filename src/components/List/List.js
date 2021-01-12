@@ -12,7 +12,7 @@ const list = props => (
                     props.data.map(item => (
                         <div onClick={()=> props.clicked(item.id)} className='List-Item-Container'>
                             <Image
-                                src={`https://image.tmdb.org/t/p/w500${item.profile_path ? item.profile_path : item.poster_path}`}
+                                src={`https://image.tmdb.org/t/p/w500${item.profile_path}`}
                                 alt='image'
                                 className={['List-Image',props.override].join(' ')}
                             />

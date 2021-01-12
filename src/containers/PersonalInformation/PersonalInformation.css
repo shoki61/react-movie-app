@@ -81,7 +81,8 @@
     box-shadow: 0 0 5px grey;
 }
 .Personal-Information-Bottom{
-    margin-top: 30px;
+    width: 85%;
+    margin: 30px auto;
 }
 
 
