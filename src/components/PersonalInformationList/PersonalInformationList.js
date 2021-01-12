@@ -4,28 +4,19 @@ import './PersonalInformationList.css';
 
 const personalInformationList = props => (
     <div className='Personal-Info-Container'>
-        <p className='Personal-Information-Title'>{props.title}</p>
+        <p className='Personal-Information-Title'>{props.title} <span>({props.count})</span></p>
         <div className='Personal-Info-List-Container'>
-            <div className='Personal-Information-List'>
-                <p className='Personal-Information-List-Name'>Mandalorian <span>as John</span></p>
-                <p className='Personal-Info-Release-Date'>2020</p>
-            </div>
-            <div className='Personal-Information-List'>
-                <p className='Personal-Information-List-Name'>Mandalorian <span>as John</span></p>
-                <p className='Personal-Info-Release-Date'>2020</p>
-            </div>
-            <div className='Personal-Information-List'>
-                <p className='Personal-Information-List-Name'>Mandalorian <span>as John</span></p>
-                <p className='Personal-Info-Release-Date'>2020</p>
-            </div>
-            <div className='Personal-Information-List'>
-                <p className='Personal-Information-List-Name'>Mandalorian <span>as John</span></p>
-                <p className='Personal-Info-Release-Date'>2020</p>
-            </div>
-            <div className='Personal-Information-List'>
-                <p className='Personal-Information-List-Name'>Mandalorian <span>as John</span></p>
-                <p className='Personal-Info-Release-Date'>2020</p>
-            </div>
+            {
+                props.data.map(item => (
+                    <div className='Personal-Information-List'>
+                        <div style={{display:'flex',alignItems:'center',width:'80%'}}>
+                            <p className='Personal-Information-List-Name'>- {item.title}{item.character ? <span>as {item.character}</span>:null}</p>
+                            <p className='Personal-Information-Average'><i className='fas fa-star'/> {item.vote_average}</p>
+                        </div>
+                        <p className='Personal-Info-Release-Date'>{item.release_date ? item.release_date : '--'}</p>
+                    </div>
+                ))
+            }
         </div>
     </div>
 );

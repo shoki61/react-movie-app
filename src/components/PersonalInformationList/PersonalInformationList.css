@@ -1,5 +1,6 @@
 .Personal-Info-Container{
     width: 100%;
+    margin-top: 30px;
 }
 
 .Personal-Information-Title{
@@ -8,17 +9,24 @@
     margin:10px;
 }
 
+.Personal-Information-Title span{
+    color: #8d8d8d;
+    font-size: 20px;
+}
+
 .Personal-Information-List{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: auto;
     width: 100%;
-    padding:15px 50px 15px 20px;
+    padding:0 50px 0 20px;
     border:1px solid #e3e3e3;
     border-bottom: none;
     transition: all .3s ease-in-out;
     cursor: pointer;
+    position: relative;
+    height: 50px;
 }
 .Personal-Info-List-Container .Personal-Information-List:first-child{
     border-radius: 5px 5px 0 0;
@@ -33,12 +41,26 @@
     color: #606060;
     font-size: 20px;
     font-family: "Source Sans Pro",sans-serif;
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .Personal-Information-List-Name span{
     font-size: 14px;
     color: #8d8d8d;
-    margin-left: 10px;
+    margin-left: 5px;
+}
+
+.Personal-Information-Average{
+    font-size: 17px;
+    margin-left: 25px;
+    color:#414141
+}
+
+.Personal-Information-Average i {
+    color: #ffa200;
 }
 
 .Personal-Info-Release-Date{
@@ -54,5 +76,9 @@
 }
 .Personal-Information-List:hover .Personal-Info-Release-Date{
     color: #ffffff
+}
+
+.Personal-Information-List:hover .Personal-Information-Average{
+    color:seashell;
 }
 
