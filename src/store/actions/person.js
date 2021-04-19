@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
-import { APIKey } from '../../env';
+import { API } from '../../env';
 
 
 const personalInformationStart = () => {
@@ -39,7 +39,7 @@ const personalTVCredits = data => {
 
 const getPersonalMovieCredits = id => {
     return dispatch => {
-        axios.get(`/person/${id}/movie_credits?api_key=${APIKey}&language=en-US`)
+        axios.get(`/person/${id}/movie_credits?api_key=${API}&language=en-US`)
             .then(response => {
                 dispatch(personalMovieCredits(response.data));
             })
@@ -49,7 +49,7 @@ const getPersonalMovieCredits = id => {
 
 const getPersonalTVCredits = id => {
     return dispatch => {
-        axios.get(`/person/${id}/tv_credits?api_key=${APIKey}&language=en-US`)
+        axios.get(`/person/${id}/tv_credits?api_key=${API}&language=en-US`)
             .then(response => {
                 dispatch(personalTVCredits(response.data));
             })
@@ -60,12 +60,12 @@ const getPersonalTVCredits = id => {
 const getPersonalInformation = id => {
     return dispatch => {
         dispatch(personalInformationStart());
-        axios.get(`/person/${id}?api_key=${APIKey}&language=en-US`)
+        axios.get(`/person/${id}?api_key=${API}&language=en-US`)
             .then(response => {
                 dispatch(getPersonalMovieCredits(id));
                 dispatch(getPersonalTVCredits(id));
                 const temp = [];
-                axios.get(`/person/${id}/external_ids?api_key=${APIKey}&language=en-US`)
+                axios.get(`/person/${id}/external_ids?api_key=${API}&language=en-US`)
                     .then(res=>{
                         temp.push({
                             externalID: res.data,

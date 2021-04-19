@@ -1,7 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
-import { APIKey } from '../../env';
-import {act} from "@testing-library/react";
+import { API } from '../../env';
 
 
 const popularMoviesStart = () => {
@@ -67,7 +66,7 @@ const getExternalID = data => {
 
 const extractMostPopular = () => {
     return dispatch => {
-        axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=1`)
+        axios.get(`/movie/popular?api_key=${API}&language=en-US&page=1`)
             .then(response=>{
                 const temp = [];
                 response.data.results.filter(item => {
@@ -88,7 +87,7 @@ const extractMostPopular = () => {
 const getPopularMovies = value => {
     return dispatch => {
         dispatch(popularMoviesStart());
-        axios.get(`/movie/popular?api_key=${APIKey}&language=en-US&page=${value}`)
+        axios.get(`/movie/popular?api_key=${API}&language=en-US&page=${value}`)
             .then(response=>{
                 dispatch(popularMoviesSuccess(response.data, value))
             })
@@ -102,14 +101,14 @@ const getPopularMovies = value => {
 const getMovieDetail = movie_id =>{
      return dispatch => {
          dispatch(getMovieDetailStart());
-         axios.get(`/movie/${movie_id}?api_key=${APIKey}&language=en-US`)
+         axios.get(`/movie/${movie_id}?api_key=${API}&language=en-US`)
              .then(response=>{
-                 axios.get(`/movie/${movie_id}/credits?api_key=${APIKey}&language=en-US`)
+                 axios.get(`/movie/${movie_id}/credits?api_key=${API}&language=en-US`)
                      .then(response => {
                          dispatch(getCredits(response.data))
                      })
                      .catch(error => error)
-                 axios.get(`/movie/${movie_id}/external_ids?api_key=${APIKey}`)
+                 axios.get(`/movie/${movie_id}/external_ids?api_key=${API}`)
                      .then(response => {
                          dispatch(getExternalID(response.data))
                      })
