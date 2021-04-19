@@ -12,6 +12,7 @@ import List from '../../components/List/List';
 import languagesData from '../../data/languages.json';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
+import PersonList from './PersonList/PersonList';
 
 class Detail extends Component {
 
@@ -137,6 +138,7 @@ class Detail extends Component {
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>
+                                <PersonList/>
                                 {
                                     this.props.credits.cast.length
                                         ?<div>
