@@ -12,6 +12,7 @@ const PersonList = props => {
         <div className='person-list-container'>
             {props.data.map(item => <PersonItem
                 name={item.name}
+                gender={item.gender}
                 department={item.department}
                 character={item.character}
                 avatar={item.profile_path}
