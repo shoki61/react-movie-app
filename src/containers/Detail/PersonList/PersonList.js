@@ -5,9 +5,12 @@ import PersonItem from './PersonItem/PersonItem';
 import './PersonList.css';
 
 const PersonList = props => {
-    return <div>
+    return <div style={{display:'flex', flexDirection:'flow'}}>
         <PersonItem/>
-    </div>;
+        <PersonItem/>
+        <PersonItem/>
+    </div>
+    
 };
 
 export default PersonList;

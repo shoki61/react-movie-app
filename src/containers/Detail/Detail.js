@@ -26,6 +26,7 @@ class Detail extends Component {
     render() {
         return (
             <div className='Detail'>
+                 <PersonList/>
                 {
                     this.props.movieDetail && this.props.credits
                         ?<div>
@@ -138,7 +139,7 @@ class Detail extends Component {
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>
-                                <PersonList/>
+                                    
                                 {
                                     this.props.credits.cast.length
                                         ?<div>
