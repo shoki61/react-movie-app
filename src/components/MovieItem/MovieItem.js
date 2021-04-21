@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './GenreList.css';
+import './MovieItem.css';
 import PageButton from '../UI/PageButtons/PageButtons';
 import Spinner from '../UI/Spinner/Spinner';
 import Image from '../UI/Image/Image';
 
-const genreList = props => (
+const MovieItem = props => (
     <div className='Container'>
         <p className='Title'>{props.title} Movies</p>
         <div className='List-Container'>
@@ -40,4 +40,4 @@ const genreList = props => (
     </div>
 );
 
-export default genreList;
+export default MovieItem;

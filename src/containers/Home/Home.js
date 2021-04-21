@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './Home.css';
 import Slide from '../../components/UI/Slide/Slide';
-import GenreList from '../../components/GenreList/GenreList';
+import MovieItem from '../../components/MovieItem/MovieItem';
 import * as actions from '../../store/actions/index';
 
 class Home extends Component{
@@ -25,7 +25,7 @@ class Home extends Component{
                         clicked={this.goDetail}/>
                 </div>
                 <div style={{width:'70%',margin:'auto'}}>
-                    <GenreList
+                    <MovieItem
                         movieList={this.props.popularMovies.results}
                         page={this.props.popularMovies.page}
                         title='Popular'

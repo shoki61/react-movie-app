@@ -7,9 +7,7 @@ import {ImFacebook} from "react-icons/im";
 import './PersonalInformation.css';
 import Image from '../../components/UI/Image/Image';
 import Link from "../../components/UI/Link/Link";
-import GenreList from '../../components/GenreList/GenreList';
 import PersonalInfoList from '../../components/PersonalInformationList/PersonalInformationList';
-import List from '../../components/List/List';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 class PersonalInformation extends Component{

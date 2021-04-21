@@ -12,7 +12,7 @@ const PersonItem = props => {
     return <div className='person-item'>
         <div className='person-item-img'>
             <div className='person-item-img-back'></div>
-            <Image 
+            <Image
                 src={props.avatar 
                     ? `https://image.tmdb.org/t/p/w500${props.avatar}`
                     : props.gender === 2 

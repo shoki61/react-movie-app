@@ -8,7 +8,6 @@ import { AiFillInstagram, AiOutlineTwitter,AiFillPlayCircle, AiOutlineLink } fro
 import './Detail.css';
 import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
-import List from '../../components/List/List';
 import languagesData from '../../data/languages.json';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
