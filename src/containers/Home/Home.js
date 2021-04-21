@@ -9,6 +9,7 @@ import * as actions from '../../store/actions/index';
 class Home extends Component{
     goDetail = id => {
         this.props.onGetMovieDetail(id);
+        this.props.onGetSimilarMovies(id);
         this.props.history.push('/detail')
     };
 
@@ -51,7 +52,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onGetPopularMovie: value => dispatch(actions.getPopularMovies(value)),
-        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id))
+        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
+        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id))
     };
 };
 

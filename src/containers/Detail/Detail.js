@@ -10,6 +10,7 @@ import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import languagesData from '../../data/languages.json';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import MovieItem from '../../components/MovieItem/MovieItem';
 import * as actions from '../../store/actions/index';
 import PersonList from './PersonList/PersonList';
 
@@ -21,6 +22,12 @@ class Detail extends Component {
     };
 
     goGenre = () => this.props.history.push('/genre');
+
+    changeMovieDetail = id => {
+        this.props.onGetMovieDetail(id);
+        this.props.onGetSimilarMovies(id);
+        this.props.onGetPersonalInformation(id);
+    };
 
     render() {
         return (
@@ -39,7 +46,7 @@ class Detail extends Component {
                                 <div className='Detail-Right'>
                                     <div className='Name-Container'>
                                         <div>
-                                            <p className='Name'>{this.props.movieDetail.title}</p>
+                                            <p className='Name'>{this.props.movieDetail.title}{this.props.movieDetail.id}</p>
                                             <p className='Detail-Tag-Line'>{this.props.movieDetail.tagline}</p>
                                         </div>
                                         <span className='Detail-Release-Date'>{this.props.movieDetail.release_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime} min</span>
@@ -55,7 +62,7 @@ class Detail extends Component {
                                         }
                                     </ul>
                                     <div>
-                                        <p className='Detail-Title'>Overview</p>
+                                        <p className='Detail-Title'>Overview {this.props.movieDetail.id}</p>
                                         <p className='Detail-Overview'>
                                             {this.props.movieDetail.overview}
                                         </p>
@@ -146,6 +153,18 @@ class Detail extends Component {
                                     :null
                                 }
                             </div>
+                            { this.props.similarMovies.results.length ?
+                                <div style={{width: '80%', margin:'auto'}}>
+                                    <MovieItem
+                                        movieList={this.props.similarMovies.results}
+                                        page={this.props.similarMovies.page}
+                                        title='Similar'
+                                        clicked={this.changeMovieDetail}
+                                        nextPage={1}
+                                        previewPage={2}
+                                    />
+                                </div>: null
+                            }
                         </div>
                         :<Spinner/>
 
@@ -159,13 +178,16 @@ const mapStateToProps = state => {
     return{
         movieDetail: state.movie.movieDetail,
         credits: state.movie.credits,
-        externalID: state.movie.externalID
+        externalID: state.movie.externalID,
+        similarMovies: state.movie.similarMovies
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id))
+        onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id)),
+        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
+        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id))
     };
 };
 

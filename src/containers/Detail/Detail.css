@@ -1,5 +1,5 @@
 .Detail{
-    padding-top: 135px;
+    padding: 100px 0 50px 0;
 }
 
 .Detail-Top{
@@ -7,7 +7,7 @@
 }
 
 .Detail-Bottom{
-    margin:75px auto 150px auto;
+    margin:0 auto 100px auto;
     width: 65%;
 }
 
