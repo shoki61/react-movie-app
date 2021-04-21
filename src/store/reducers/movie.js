@@ -7,6 +7,7 @@ const initialState = {
     credits:null,
     externalID: null,
     popularMovies:[],
+    similarMovies:[],
     filteredMostPopular:null,
     page:1,
     error:null,
@@ -22,7 +23,7 @@ const reducer = ( state = initialState, action ) => {
             return updateObject(state, {filteredMostPopular: action.filteredMostPopular});
 
         case actionTypes.GET_POPULAR_MOVIES_START:
-            return updateObject(state, {loading:true, error:null});
+            return updateObject(state, {loading:true});
         case actionTypes.GET_POPULAR_MOVIES_SUCCESS:
             return updateObject(state, {
                 loading:null,
@@ -39,7 +40,7 @@ const reducer = ( state = initialState, action ) => {
             return updateObject(state,{externalID: action.externalID})
 
         case actionTypes.GET_MOVIE_DETAIL_START:
-            return updateObject(state, {loading:true,error:null});
+            return updateObject(state, {loading:true});
         case actionTypes.GET_MOVIE_DETAIL_SUCCESS:
             return updateObject(state, {
                 loading:null,
@@ -47,8 +48,15 @@ const reducer = ( state = initialState, action ) => {
             });
         case actionTypes.GET_MOVIE_DETAIL_FAIL:
             return updateObject(state, {loading:null, error:true});
+        
+        case actionTypes.GET_SIMILAR_MOVIES_START:
+            return updateObject(state, { loading: true});
+        case actionTypes.GET_SIMILAR_MOVIES_SUCCESS:
+            return updateObject(state, {loading:null, similarMovies: action.similarMovies});
+        case actionTypes.GET_SIMILAR_MOVIES_FAIL:
+            return updateObject(state, {loading:null, error: true});
 
-        default:return state;
+        default: return state;
     };
 };
 

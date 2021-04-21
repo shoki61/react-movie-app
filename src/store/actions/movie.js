@@ -122,8 +122,42 @@ const getMovieDetail = movie_id =>{
 };
 
 
+const getSimilarMoviesStart = () => {
+    return {
+        type: actionTypes.GET_SIMILAR_MOVIES_START
+    };
+};
+
+const getSimilarMoviesSuccess = data => {
+    return {
+        type: actionTypes.GET_SIMILAR_MOVIES_SUCCESS,
+        similarMovies: data
+    };
+};
+
+const getSimilarMoviesFail = () => {
+    return {
+        type: actionTypes.GET_SIMILAR_MOVIES_FAIL
+    };
+};
+
+const getSimilarMovies = id => {
+    return dispatch => {
+        dispatch(getSimilarMoviesStart());
+        axios.get(`/movie/${id}/similar?api_key=${API}&language=en-US&page=1`)
+            .then(response => {
+                dispatch(getSimilarMoviesSuccess(response.data));
+            })
+            .catch(error => {
+                dispatch(getSimilarMoviesFail());
+            });
+    };
+};
+
+
 export {
     getPopularMovies,
     extractMostPopular,
-    getMovieDetail
+    getMovieDetail,
+    getSimilarMovies
 };
