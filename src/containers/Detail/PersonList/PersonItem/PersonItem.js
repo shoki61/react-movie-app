@@ -9,7 +9,7 @@ import person from '../../../../assets/person.png';
 
 
 const PersonItem = props => {
-    return <div className='person-item'>
+    return <div onClick={props.clicked} className='person-item'>
         <div className='person-item-img'>
             <div className='person-item-img-back'></div>
             <Image

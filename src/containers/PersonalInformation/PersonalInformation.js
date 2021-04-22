@@ -99,21 +99,20 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                <PersonalInfoList
+                                { this.props.movieCredits.cast.length ? <PersonalInfoList
                                     count={this.props.movieCredits.cast.length}
                                     title='Cast'
                                     data={this.props.movieCredits.cast}
-                                />
-                                <PersonalInfoList
+                                />:null}
+                                { this.props.movieCredits.crew.length ? <PersonalInfoList
                                     count={this.props.movieCredits.crew.length}
                                     title='Crew'
                                     data={this.props.movieCredits.crew}
-                                />
+                                />:null}
 
                             </div>
                         </div>
                         :<Spinner/>
-
                 }
             </div>
         );

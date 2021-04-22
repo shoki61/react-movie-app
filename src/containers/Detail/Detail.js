@@ -145,11 +145,11 @@ class Detail extends Component {
                             </div>
                             <div className='Detail-Bottom'>  
                                 {this.props.credits.cast.length 
-                                    ? <PersonList title='Cast' data={this.props.credits.cast}/>
+                                    ? <PersonList clicked={this.goPersonalInformation} title='Cast' data={this.props.credits.cast}/>
                                     :null
                                 }
                                 {this.props.credits.crew.length
-                                    ? <PersonList title='Crew' data={this.props.credits.crew}/>
+                                    ? <PersonList clicked={this.goPersonalInformation} title='Crew' data={this.props.credits.crew}/>
                                     :null
                                 }
                             </div>
