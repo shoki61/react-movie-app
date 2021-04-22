@@ -9,9 +9,13 @@ import Image from '../../components/UI/Image/Image';
 import Link from "../../components/UI/Link/Link";
 import PersonalInfoList from '../../components/PersonalInformationList/PersonalInformationList';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import * as actions from '../../store/actions/index';
 
 class PersonalInformation extends Component{
-    goDetail = () => this.props.history.push('/detail');
+    goDetail = id => {
+        this.props.onGetMovieDetail(id);
+        this.props.history.push('/detail')
+    };
     render(){
         return(
             <div className='Personal-Information'>
@@ -44,7 +48,7 @@ class PersonalInformation extends Component{
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Known Credits</p>
-                                        <p className='Person-Info'>47</p>
+                                        <p className='Person-Info'>{this.props.movieCredits.cast ? this.props.movieCredits.cast.length : 0}</p>
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Links</p>
@@ -103,11 +107,13 @@ class PersonalInformation extends Component{
                                     count={this.props.movieCredits.cast.length}
                                     title='Cast'
                                     data={this.props.movieCredits.cast}
+                                    clicked={this.goDetail}
                                 />:null}
                                 { this.props.movieCredits.crew && this.props.movieCredits.crew.length ? <PersonalInfoList
                                     count={this.props.movieCredits.crew.length}
                                     title='Crew'
                                     data={this.props.movieCredits.crew}
+                                    clicked={this.goDetail}
                                 />:null}
 
                             </div>
@@ -127,4 +133,10 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(PersonalInformation);
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetMovieDetail: id => dispatch(actions.getMovieDetail(id))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PersonalInformation);

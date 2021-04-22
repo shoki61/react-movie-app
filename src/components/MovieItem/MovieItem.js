@@ -36,7 +36,7 @@ const MovieItem = props => (
                      : <Spinner/>
             }
         </div>
-        <PageButton next={props.nextPage} preview={props.previewPage} page={props.page}/>
+        {props.page && <PageButton next={props.nextPage} preview={props.previewPage} page={props.page}/>}
     </div>
 );
 

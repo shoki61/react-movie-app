@@ -16,3 +16,25 @@
     display: flex;
     overflow:auto;
 }
+
+.person-list-container::-webkit-scrollbar {
+    height: 7px;
+}
+  
+.person-list-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(202, 202, 202); 
+    border-radius: 10px;
+}
+   
+.person-list-container::-webkit-scrollbar-thumb {
+    background: #a8a8a8; 
+    border-radius: 10px;
+}
+  
+.person-list-container::-webkit-scrollbar-thumb:hover {
+    background: #929292; 
+}
+
+.person-list-container::-webkit-scrollbar-thumb:active {
+    background: #666666; 
+}

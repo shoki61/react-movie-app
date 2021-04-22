@@ -41,7 +41,8 @@
     color: #606060;
     font-size: 20px;
     font-family: "Source Sans Pro",sans-serif;
-    max-width: 80%;
+    max-width: 60%;
+    width: 60%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -80,5 +81,10 @@
 
 .Personal-Information-List:hover .Personal-Information-Average{
     color:seashell;
+}
+
+.list-number{
+    margin: 0 5px;
+    font-size: 23px !important;
 }
 

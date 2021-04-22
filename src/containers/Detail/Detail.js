@@ -46,7 +46,7 @@ class Detail extends Component {
                                 <div className='Detail-Right'>
                                     <div className='Name-Container'>
                                         <div>
-                                            <p className='Name'>{this.props.movieDetail.title}{this.props.movieDetail.id}</p>
+                                            <p className='Name'>{this.props.movieDetail.title}</p>
                                             <p className='Detail-Tag-Line'>{this.props.movieDetail.tagline}</p>
                                         </div>
                                         <span className='Detail-Release-Date'>{this.props.movieDetail.release_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime} min</span>
@@ -144,11 +144,11 @@ class Detail extends Component {
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>  
-                                {this.props.credits.cast.length 
+                                {this.props.credits.cast && this.props.credits.cast.length 
                                     ? <PersonList clicked={this.goPersonalInformation} title='Cast' data={this.props.credits.cast}/>
                                     :null
                                 }
-                                {this.props.credits.crew.length
+                                {this.props.credits.crew && this.props.credits.crew.length
                                     ? <PersonList clicked={this.goPersonalInformation} title='Crew' data={this.props.credits.crew}/>
                                     :null
                                 }
@@ -157,17 +157,13 @@ class Detail extends Component {
                                 <div style={{width: '80%', margin:'auto'}}>
                                     <MovieItem
                                         movieList={this.props.similarMovies.results}
-                                        page={this.props.similarMovies.page}
                                         title='Similar'
                                         clicked={this.changeMovieDetail}
-                                        nextPage={1}
-                                        previewPage={2}
                                     />
                                 </div>: null
                             }
                         </div>
                         :<Spinner/>
-
                 }
             </div>
         );
@@ -179,7 +175,7 @@ const mapStateToProps = state => {
         movieDetail: state.movie.movieDetail,
         credits: state.movie.credits,
         externalID: state.movie.externalID,
-        similarMovies: state.movie.similarMovies
+        similarMovies: state.movie.similarMovies,
     };
 };
 
