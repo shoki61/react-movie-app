@@ -99,12 +99,12 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                { this.props.movieCredits.cast.length ? <PersonalInfoList
+                                { this.props.movieCredits.cast && this.props.movieCredits.cast.length ? <PersonalInfoList
                                     count={this.props.movieCredits.cast.length}
                                     title='Cast'
                                     data={this.props.movieCredits.cast}
                                 />:null}
-                                { this.props.movieCredits.crew.length ? <PersonalInfoList
+                                { this.props.movieCredits.crew && this.props.movieCredits.crew.length ? <PersonalInfoList
                                     count={this.props.movieCredits.crew.length}
                                     title='Crew'
                                     data={this.props.movieCredits.crew}

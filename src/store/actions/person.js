@@ -10,7 +10,6 @@ const personalInformationStart = () => {
 };
 
 const personalInformationSuccess = data => {
-    console.log(data)
     return{
         type: actionTypes.GET_PERSON_DETAIL_SUCCESS,
         personalInformation: data
