@@ -14,6 +14,7 @@ import * as actions from '../../store/actions/index';
 class PersonalInformation extends Component{
     goDetail = id => {
         this.props.onGetMovieDetail(id);
+        this.props.onGetSimilarMovies(id);
         this.props.history.push('/detail')
     };
     render(){
@@ -135,7 +136,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetMovieDetail: id => dispatch(actions.getMovieDetail(id))
+        onGetMovieDetail: id => dispatch(actions.getMovieDetail(id)),
+        onGetSimilarMovies: id => dispatch(actions.getSimilarMovies(id))
     };
 };
 
