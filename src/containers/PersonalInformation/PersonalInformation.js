@@ -116,7 +116,6 @@ class PersonalInformation extends Component{
                                     data={this.props.movieCredits.crew}
                                     clicked={this.goDetail}
                                 />:null}
-
                             </div>
                         </div>
                         :<Spinner/>
