@@ -8,6 +8,11 @@
     color: #ff0092;
     letter-spacing: 1px;
 }
+
+a:-webkit-any-link {
+    text-decoration: none !important;
+}
+
 .Logo img{
     height: 45px;
     margin-right: 10px;
