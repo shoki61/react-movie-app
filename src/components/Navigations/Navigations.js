@@ -5,13 +5,13 @@ import './Navigations.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 import genresData from '../../data/genres.json';
 
-const navigations = () => (
+const navigations = props => (
     <div className='Navigation'>
         <NavigationItem title='Movies'>
-            <NavLink to='/movies/popular'>Popular</NavLink>
-            <NavLink to='/movies/now-playing'>Now Playing</NavLink>
-            <NavLink to='/movies/upcoming'>Upcoming</NavLink>
-            <NavLink to='/movies/top-rated'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('popular')} to='/movies/popular'>Popular</NavLink>
+            <NavLink onClick={() => props.getMovies('now_playing')} to='/movies/now-playing'>Now Playing</NavLink>
+            <NavLink onClick={() => props.getMovies('upcoming')} to='/movies/upcoming'>Upcoming</NavLink>
+            <NavLink onClick={() => props.getMovies('top_rated')} to='/movies/top-rated'>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title="TV">
             <NavLink to='/movies/popular-tv'>Popular</NavLink>
