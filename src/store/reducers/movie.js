@@ -6,7 +6,7 @@ const initialState = {
     movieDetail:null,
     credits:null,
     externalID: null,
-    popularMovies:[],
+    movies:[],
     similarMovies:[],
     filteredMostPopular:null,
     page:1,
@@ -22,15 +22,15 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.FILTERED_MOST_POPULAR:
             return updateObject(state, {filteredMostPopular: action.filteredMostPopular});
 
-        case actionTypes.GET_POPULAR_MOVIES_START:
+        case actionTypes.GET_MOVIES_START:
             return updateObject(state, {loading:true});
-        case actionTypes.GET_POPULAR_MOVIES_SUCCESS:
+        case actionTypes.GET_MOVIES_SUCCESS:
             return updateObject(state, {
                 loading:null,
-                popularMovies: action.popularMovies,
+                movies: action.movies,
                 page:action.page
             });
-        case actionTypes.GET_POPULAR_MOVIES_FAIL:
+        case actionTypes.GET_MOVIES_FAIL:
             return updateObject(state, {loading:null, error:true});
 
         case actionTypes.CREDITS:

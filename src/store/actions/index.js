@@ -1,5 +1,5 @@
 export {
-    getPopularMovies,
+    getMovies,
     extractMostPopular,
     getMovieDetail,
     getSimilarMovies

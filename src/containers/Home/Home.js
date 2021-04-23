@@ -13,9 +13,9 @@ class Home extends Component{
         this.props.history.push('/detail')
     };
 
-    nextPage = () => this.props.onGetPopularMovie(this.props.page+1);
+    nextPage = () => this.props.onGetMovies('popular', this.props.page+1);
 
-    previewPage = () => this.props.onGetPopularMovie(this.props.page-1);
+    previewPage = () => this.props.onGetMovies('popular', this.props.page-1);
 
     render(){
         return(
@@ -27,8 +27,8 @@ class Home extends Component{
                 </div>
                 <div style={{width:'70%',margin:'auto'}}>
                     <MovieItem
-                        movieList={this.props.popularMovies.results}
-                        page={this.props.popularMovies.page}
+                        movieList={this.props.movies.results}
+                        page={this.props.movies.page}
                         title='Popular'
                         nextPage={this.nextPage}
                         previewPage={this.previewPage}
@@ -43,7 +43,7 @@ class Home extends Component{
 
 const mapStateToProps = state => {
     return {
-        popularMovies:state.movie.popularMovies,
+        movies:state.movie.movies,
         filteredPopular: state.movie.filteredMostPopular,
         page: state.movie.page,
     };
@@ -51,7 +51,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetPopularMovie: value => dispatch(actions.getPopularMovies(value)),
+        onGetMovies: (movieType, value) => dispatch(actions.getMovies(movieType, value)),
         onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
         onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id))
     };

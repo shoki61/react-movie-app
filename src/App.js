@@ -13,7 +13,7 @@ import MovieList from "./containers/MovieList/MovieList";
 
 class App extends  Component{
     componentDidMount() {
-        this.props.onGetPopularMovies(1);
+        this.props.onGetMovies('popular', 1);
         this.props.onGetMostPopular();
     };
 
@@ -32,7 +32,7 @@ class App extends  Component{
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetPopularMovies: value => dispatch(actions.getPopularMovies(value)),
+        onGetMovies: (movieType, value) => dispatch(actions.getMovies(movieType, value)),
         onGetMostPopular: () => dispatch(actions.extractMostPopular())
     };
 };

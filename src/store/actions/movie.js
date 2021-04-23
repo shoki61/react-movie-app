@@ -3,23 +3,23 @@ import axios from '../../axios';
 import { API } from '../../env';
 
 
-const popularMoviesStart = () => {
+const getMoviesStart = () => {
     return{
-        type: actionTypes.GET_POPULAR_MOVIES_START
+        type: actionTypes.GET_MOVIES_START
     };
 };
 
-const popularMoviesSuccess = (data, value) => {
+const getMoviesSuccess = (data, value) => {
     return {
-        type: actionTypes.GET_POPULAR_MOVIES_SUCCESS,
-        popularMovies: data,
+        type: actionTypes.GET_MOVIES_SUCCESS,
+        movies: data,
         page:value
     };
 };
 
-const popularMoviesFail = () => {
+const getMoviesFail = () => {
     return {
-        type:actionTypes.GET_POPULAR_MOVIES_FAIL
+        type:actionTypes.GET_MOVIES_FAIL
     };
 };
 
@@ -84,15 +84,15 @@ const extractMostPopular = () => {
 };
 
 
-const getPopularMovies = value => {
+const getMovies = (movieType, value) => {
     return dispatch => {
-        dispatch(popularMoviesStart());
-        axios.get(`/movie/popular?api_key=${API}&language=en-US&page=${value}`)
+        dispatch(getMoviesStart());
+        axios.get(`/movie/${movieType}?api_key=${API}&language=en-US&page=${value}`)
             .then(response=>{
-                dispatch(popularMoviesSuccess(response.data, value))
+                dispatch(getMoviesSuccess(response.data, value))
             })
             .catch(error=>{
-                dispatch(popularMoviesFail())
+                dispatch(getMoviesFail())
             });
     };
 };
@@ -156,7 +156,7 @@ const getSimilarMovies = id => {
 
 
 export {
-    getPopularMovies,
+    getMovies,
     extractMostPopular,
     getMovieDetail,
     getSimilarMovies
