@@ -7,7 +7,7 @@ import Image from '../UI/Image/Image';
 
 const MovieItem = props => (
     <div className='Container'>
-        <p className='Title'>{props.title} Movies</p>
+        <p className='Title'>{props.title}</p>
         <div className='List-Container'>
             {props.movieList
                 ? props.movieList.map(item => (
@@ -29,7 +29,7 @@ const MovieItem = props => (
                                      <p className='Movie-Vote-Average'>{item.vote_average}</p>
                                  </div>
                              </div>
-                             <p className='Movie-Title'>{item.title}</p>
+                             <p className='Movie-Title'>{item.title ?? item.name}</p>
                          </div>
                 ))
                 : <Spinner/>

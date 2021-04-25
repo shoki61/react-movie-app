@@ -12,6 +12,10 @@ class MovieList extends Component{
 
     goDetail = () => this.props.history.push('/detail');
 
+    componentDidUpdate(){
+        console.log(this.props.movies.results)
+    }
+
     nextPage = () => {
         this.props.onGetMovies(this.movieType, this.props.movies.page + 1);
     };
