@@ -12,8 +12,8 @@ import Button from '../../components/UI/Button/Button';
 import * as actions from '../../store/actions/index';
 
 class Header extends Component{
-    getMovies = movieType => {
-        this.props.onGetMovies(movieType, 1);
+    getMovies = (category, movieType) => {
+        this.props.onGetMovies(category, movieType, 1);
     };
     render(){
         return(
@@ -43,7 +43,7 @@ class Header extends Component{
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetMovies: (movieType, value) => dispatch(actions.getMovies(movieType, value))
+        onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value))
     };
 };
 

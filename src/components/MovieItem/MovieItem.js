@@ -9,9 +9,8 @@ const MovieItem = props => (
     <div className='Container'>
         <p className='Title'>{props.title} Movies</p>
         <div className='List-Container'>
-            {
-                 props.movieList
-                     ? props.movieList.map(item => (
+            {props.movieList
+                ? props.movieList.map(item => (
                          <div
                              key={item.id}
                              onClick={()=> props.clicked(item.id)}
@@ -32,8 +31,8 @@ const MovieItem = props => (
                              </div>
                              <p className='Movie-Title'>{item.title}</p>
                          </div>
-                     ))
-                     : <Spinner/>
+                ))
+                : <Spinner/>
             }
         </div>
         {props.page && <PageButton next={props.nextPage} preview={props.previewPage} page={props.page}/>}

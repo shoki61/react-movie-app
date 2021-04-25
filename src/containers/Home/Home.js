@@ -9,7 +9,7 @@ import * as actions from '../../store/actions/index';
 class Home extends Component{
 
     componentDidMount(){
-        this.props.onGetMovies('popular', 1);
+        this.props.onGetMovies('movie', 'popular', 1);
         this.props.onGetMostPopular();
     };
     
@@ -56,7 +56,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetMovies: (movieType, value) => dispatch(actions.getMovies(movieType, value)),
+        onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value)),
         onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
         onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id)),
         onGetMostPopular: () => dispatch(actions.extractMostPopular())

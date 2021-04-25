@@ -83,10 +83,10 @@ const extractMostPopular = () => {
 };
 
 
-const getMovies = (movieType, value) => {
+const getMovies = (category, movieType, value) => {
     return dispatch => {
         dispatch(getMoviesStart());
-        axios.get(`/movie/${movieType}?api_key=${API}&language=en-US&page=${value}`)
+        axios.get(`/${category}/${movieType}?api_key=${API}&language=en-US&page=${value}`)
             .then(response=>{
                 dispatch(getMoviesSuccess(response.data, value))
             })

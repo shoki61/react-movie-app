@@ -8,16 +8,16 @@ import genresData from '../../data/genres.json';
 const navigations = props => (
     <div className='Navigation'>
         <NavigationItem title='Movies'>
-            <NavLink onClick={() => props.getMovies('popular')} to='/movies/popular'>Popular</NavLink>
-            <NavLink onClick={() => props.getMovies('now_playing')} to='/movies/now_playing'>Now Playing</NavLink>
-            <NavLink onClick={() => props.getMovies('upcoming')} to='/movies/upcoming'>Upcoming</NavLink>
-            <NavLink onClick={() => props.getMovies('top_rated')} to='/movies/top_rated'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('movies', 'popular')} to='/movies/popular'>Popular</NavLink>
+            <NavLink onClick={() => props.getMovies('movies', 'now_playing')} to='/movies/now_playing'>Now Playing</NavLink>
+            <NavLink onClick={() => props.getMovies('movies', 'upcoming')} to='/movies/upcoming'>Upcoming</NavLink>
+            <NavLink onClick={() => props.getMovies('movies', 'top_rated')} to='/movies/top_rated'>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title="TV">
-            <NavLink to='/movies/popular-tv'>Popular</NavLink>
-            <NavLink to='/movies/airing-today'>Airing Today</NavLink>
-            <NavLink to='/movies/on-today'>On Today</NavLink>
-            <NavLink to='/movies/top-rated-tv'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'popular')} to='/movies/popular-tv'>Popular</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'airing_today')} to='/movies/airing-today'>Airing Today</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'on_the_air')} to='/movies/on-today'>On Today</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'top_rated')} to='/movies/top-rated-tv'>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title='Genres'>
             {
