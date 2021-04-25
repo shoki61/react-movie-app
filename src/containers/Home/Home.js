@@ -7,15 +7,21 @@ import MovieItem from '../../components/MovieItem/MovieItem';
 import * as actions from '../../store/actions/index';
 
 class Home extends Component{
+
+    componentDidMount(){
+        this.props.onGetMovies('popular', 1);
+        this.props.onGetMostPopular();
+    };
+    
     goDetail = id => {
         this.props.onGetMovieDetail(id);
         this.props.onGetSimilarMovies(id);
         this.props.history.push('/detail')
     };
 
-    nextPage = () => this.props.onGetMovies('popular', this.props.page+1);
+    nextPage = () => this.props.onGetMovies('popular', this.props.movies.page + 1);
 
-    previewPage = () => this.props.onGetMovies('popular', this.props.page-1);
+    previewPage = () => this.props.onGetMovies('popular', this.props.movies.page - 1);
 
     render(){
         return(
@@ -44,8 +50,7 @@ class Home extends Component{
 const mapStateToProps = state => {
     return {
         movies:state.movie.movies,
-        filteredPopular: state.movie.filteredMostPopular,
-        page: state.movie.page,
+        filteredPopular: state.movie.filteredMostPopular
     };
 };
 
@@ -53,7 +58,8 @@ const mapDispatchToProps = dispatch => {
     return{
         onGetMovies: (movieType, value) => dispatch(actions.getMovies(movieType, value)),
         onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
-        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id))
+        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id)),
+        onGetMostPopular: () => dispatch(actions.extractMostPopular())
     };
 };
 

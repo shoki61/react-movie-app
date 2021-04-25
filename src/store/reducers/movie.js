@@ -9,7 +9,6 @@ const initialState = {
     movies:[],
     similarMovies:[],
     filteredMostPopular:null,
-    page:1,
     error:null,
     loading:null
 };
@@ -27,8 +26,7 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.GET_MOVIES_SUCCESS:
             return updateObject(state, {
                 loading:null,
-                movies: action.movies,
-                page:action.page
+                movies: action.movies
             });
         case actionTypes.GET_MOVIES_FAIL:
             return updateObject(state, {loading:null, error:true});

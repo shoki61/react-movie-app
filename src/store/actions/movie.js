@@ -9,11 +9,10 @@ const getMoviesStart = () => {
     };
 };
 
-const getMoviesSuccess = (data, value) => {
+const getMoviesSuccess = data => {
     return {
         type: actionTypes.GET_MOVIES_SUCCESS,
-        movies: data,
-        page:value
+        movies: data
     };
 };
 

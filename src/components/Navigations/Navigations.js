@@ -9,9 +9,9 @@ const navigations = props => (
     <div className='Navigation'>
         <NavigationItem title='Movies'>
             <NavLink onClick={() => props.getMovies('popular')} to='/movies/popular'>Popular</NavLink>
-            <NavLink onClick={() => props.getMovies('now_playing')} to='/movies/now-playing'>Now Playing</NavLink>
+            <NavLink onClick={() => props.getMovies('now_playing')} to='/movies/now_playing'>Now Playing</NavLink>
             <NavLink onClick={() => props.getMovies('upcoming')} to='/movies/upcoming'>Upcoming</NavLink>
-            <NavLink onClick={() => props.getMovies('top_rated')} to='/movies/top-rated'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('top_rated')} to='/movies/top_rated'>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title="TV">
             <NavLink to='/movies/popular-tv'>Popular</NavLink>

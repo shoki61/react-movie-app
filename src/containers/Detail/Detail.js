@@ -144,23 +144,17 @@ class Detail extends Component {
                                 </div>
                             </div>
                             <div className='Detail-Bottom'>  
-                                {this.props.credits.cast && this.props.credits.cast.length 
-                                    ? <PersonList clicked={this.goPersonalInformation} title='Cast' data={this.props.credits.cast}/>
-                                    :null
-                                }
-                                {this.props.credits.crew && this.props.credits.crew.length
-                                    ? <PersonList clicked={this.goPersonalInformation} title='Crew' data={this.props.credits.crew}/>
-                                    :null
-                                }
+                                {this.props.credits.cast?.length && <PersonList clicked={this.goPersonalInformation} title='Cast' data={this.props.credits.cast}/>}
+                                {this.props.credits.crew?.length && <PersonList clicked={this.goPersonalInformation} title='Crew' data={this.props.credits.crew}/>}
                             </div>
-                            { this.props.similarMovies.results.length ?
+                            { this.props.similarMovies.results?.length &&
                                 <div style={{width: '80%', margin:'auto'}}>
                                     <MovieItem
                                         movieList={this.props.similarMovies.results}
                                         title='Similar'
                                         clicked={this.changeMovieDetail}
                                     />
-                                </div>: null
+                                </div>
                             }
                         </div>
                         :<Spinner/>
