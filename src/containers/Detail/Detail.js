@@ -20,7 +20,6 @@ class Detail extends Component {
         this.props.onGetPersonalInformation(id);
         this.props.history.push('/personal-information');
     };
-
     goGenre = () => this.props.history.push('/genre');
 
     changeMovieDetail = id => {
@@ -30,6 +29,7 @@ class Detail extends Component {
     };
 
     render() {
+        const { type } = this.props.history.location.state;
         return (
             <div className='Detail'>
                 {
@@ -46,7 +46,7 @@ class Detail extends Component {
                                 <div className='Detail-Right'>
                                     <div className='Name-Container'>
                                         <div>
-                                            <p className='Name'>{this.props.movieDetail.title}</p>
+                                            <p className='Name'>{this.props.movieDetail.title ?? this.props.movieDetail.name}</p>
                                             <p className='Detail-Tag-Line'>{this.props.movieDetail.tagline}</p>
                                         </div>
                                         <span className='Detail-Release-Date'>{this.props.movieDetail.release_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime} min</span>
@@ -82,8 +82,10 @@ class Detail extends Component {
                                         </div>
                                     </div>
                                     <div>
-                                        <p className='Detail-Title'>Director</p>
-                                        <p className='Detail-Info'>{this.props.credits.crew.filter(item => item.job === 'Director')[0].name}</p>
+                                        <p className='Detail-Title'>{type === 'movie' ? 'Director' : 'Creator'}</p>
+                                        <p className='Detail-Info'>
+                                            {this.props.credits.crew.find(item => item.job === 'Director' || item.known_for_department==='Writing' && item.department === 'Production' && item.job === 'Executive Producer').name}
+                                        </p>
                                     </div>
                                     {
                                         this.props.externalID ?

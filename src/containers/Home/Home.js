@@ -16,7 +16,7 @@ class Home extends Component{
     goDetail = id => {
         this.props.onGetMovieDetail(id);
         this.props.onGetSimilarMovies(id);
-        this.props.history.push('/detail')
+        this.props.history.push('/detail', {type:'movie'})
     };
 
     nextPage = () => this.props.onGetMovies('popular', this.props.movies.page + 1);

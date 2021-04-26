@@ -97,17 +97,17 @@ const getMovies = (category, movieType, value) => {
 };
 
 
-const getMovieDetail = movie_id =>{
+const getMovieDetail = (category, movie_id) =>{
      return dispatch => {
          dispatch(getMovieDetailStart());
-         axios.get(`/movie/${movie_id}?api_key=${API}&language=en-US`)
+         axios.get(`/${category}/${movie_id}?api_key=${API}&language=en-US`)
              .then(response=>{
-                 axios.get(`/movie/${movie_id}/credits?api_key=${API}&language=en-US`)
+                 axios.get(`/${category}/${movie_id}/credits?api_key=${API}&language=en-US`)
                      .then(response => {
                          dispatch(getCredits(response.data))
                      })
                      .catch(error => error)
-                 axios.get(`/movie/${movie_id}/external_ids?api_key=${API}`)
+                 axios.get(`/${category}/${movie_id}/external_ids?api_key=${API}`)
                      .then(response => {
                          dispatch(getExternalID(response.data))
                      })

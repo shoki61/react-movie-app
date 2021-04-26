@@ -10,10 +10,13 @@ class MovieList extends Component{
 
     movieType = this.props.match.params[0];
 
-    goDetail = () => this.props.history.push('/detail');
+    goDetail = (type, id) => {
+        this.props.onGetMovieDetail(type, id);
+        this.props.history.push('/detail',{type});
+    };
 
-    componentDidUpdate(){
-        console.log(this.props.movies.results)
+    componentDidMount(){
+        console.log(this.props.history)
     }
 
     nextPage = () => {
@@ -48,7 +51,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return{
-        onGetMovies: (movieType, page) => dispatch(actions.getMovies(movieType, page))
+        onGetMovies: (movieType, page) => dispatch(actions.getMovies(movieType, page)),
+        onGetMovieDetail: (category, id) => dispatch(actions.getMovieDetail(category, id))
     };
 };
 

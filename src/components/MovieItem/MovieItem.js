@@ -13,7 +13,7 @@ const MovieItem = props => (
                 ? props.movieList.map(item => (
                          <div
                              key={item.id}
-                             onClick={()=> props.clicked(item.id)}
+                             onClick={()=> props.clicked(item.title ? 'movie':'tv',item.id)}
                              className='Movie-Container'
                          >
                              <Image
@@ -29,7 +29,7 @@ const MovieItem = props => (
                                      <p className='Movie-Vote-Average'>{item.vote_average}</p>
                                  </div>
                              </div>
-                             <p className='Movie-Title'>{item.title ?? item.name}</p>
+                             <p className='Movie-Title'>{item.title ?? item.name}{item.id}</p>
                          </div>
                 ))
                 : <Spinner/>
