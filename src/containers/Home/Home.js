@@ -13,15 +13,15 @@ class Home extends Component{
         this.props.onGetMostPopular();
     };
     
-    goDetail = id => {
-        this.props.onGetMovieDetail(id);
+    goDetail = (type, id) => {
+        this.props.onGetMovieDetail(type, id);
         this.props.onGetSimilarMovies(id);
         this.props.history.push('/detail', {type:'movie'})
     };
 
-    nextPage = () => this.props.onGetMovies('popular', this.props.movies.page + 1);
+    nextPage = () => this.props.onGetMovies('movie', 'popular', this.props.movies.page + 1);
 
-    previewPage = () => this.props.onGetMovies('popular', this.props.movies.page - 1);
+    previewPage = () => this.props.onGetMovies('movie', 'popular', this.props.movies.page - 1);
 
     render(){
         return(
@@ -57,7 +57,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value)),
-        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
+        onGetMovieDetail: (type, movie_id) => dispatch(actions.getMovieDetail(type, movie_id)),
         onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id)),
         onGetMostPopular: () => dispatch(actions.extractMostPopular())
     };

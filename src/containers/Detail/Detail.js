@@ -15,7 +15,9 @@ import * as actions from '../../store/actions/index';
 import PersonList from './PersonList/PersonList';
 
 class Detail extends Component {
-
+    state = {
+        type: this.props.history.location.state
+    }
     goPersonalInformation = id => {
         this.props.onGetPersonalInformation(id);
         this.props.history.push('/personal-information');
@@ -23,12 +25,12 @@ class Detail extends Component {
     goGenre = () => this.props.history.push('/genre');
 
     changeMovieDetail = id => {
-        this.props.onGetMovieDetail(id);
+        this.props.onGetMovieDetail(this.state.type, id);
         this.props.onGetSimilarMovies(id);
         this.props.onGetPersonalInformation(id);
     };
     render() {
-        const { type } = this.props.history.location.state;
+        const { type } = this.state.type;
         return (
             <div className='Detail'>
                 {
@@ -48,7 +50,7 @@ class Detail extends Component {
                                             <p className='Name'>{this.props.movieDetail.title ?? this.props.movieDetail.name}</p>
                                             <p className='Detail-Tag-Line'>{this.props.movieDetail.tagline}</p>
                                         </div>
-                                        <span className='Detail-Release-Date'>{this.props.movieDetail.release_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime} min</span>
+                                        <span className='Detail-Release-Date'>{this.props.movieDetail.release_date ?? this.props.movieDetail.first_air_date} / <AiFillPlayCircle style={{fontSize:11}}/> {this.props.movieDetail.runtime ?? this.props.movieDetail.episode_run_time[0]} min</span>
                                     </div>
                                     <div className='Detail-Average'>
                                         <i className='fas fa-star'/>{this.props.movieDetail.vote_average} <div className='Detail-Average-Count'>/{this.props.movieDetail.vote_count}</div>
@@ -71,14 +73,14 @@ class Detail extends Component {
                                             <p className='Detail-Title'>Original Language</p>
                                             <p className='Detail-Info'>{languagesData.languages.filter(item => item.iso_639_1 === this.props.movieDetail.original_language)[0].english_name}</p>
                                         </div>
-                                        <div>
+                                        {type === 'movie' && <div>
                                             <p className='Detail-Title'>Budged</p>
                                             <p className='Detail-Info'>${this.props.movieDetail.budget ?? 0}</p>
-                                        </div>
-                                        <div>
+                                        </div>}
+                                        {type === 'movie' && <div>
                                             <p className='Detail-Title'>Revenue</p>
                                             <p className='Detail-Info'>${this.props.movieDetail.revenue ?? 0}</p>
-                                        </div>
+                                        </div>}
                                     </div>
                                     <div>
                                         <p className='Detail-Title'>{type === 'movie' ? 'Director' : 'Creator'}</p>
