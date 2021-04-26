@@ -12,12 +12,9 @@ class MovieList extends Component{
 
     goDetail = (type, id) => {
         this.props.onGetMovieDetail(type, id);
+        this.props.onGetSimilarMovies(type, id)
         this.props.history.push('/detail',{type});
     };
-
-    componentDidMount(){
-        console.log(this.props.history)
-    }
 
     nextPage = () => {
         this.props.onGetMovies(this.movieType, this.props.movies.page + 1);
@@ -52,7 +49,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onGetMovies: (movieType, page) => dispatch(actions.getMovies(movieType, page)),
-        onGetMovieDetail: (category, id) => dispatch(actions.getMovieDetail(category, id))
+        onGetMovieDetail: (category, id) => dispatch(actions.getMovieDetail(category, id)),
+        onGetSimilarMovies: (category, id) => dispatch(actions.getSimilarMovies(category, id))
     };
 };
 

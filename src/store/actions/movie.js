@@ -140,10 +140,10 @@ const getSimilarMoviesFail = () => {
     };
 };
 
-const getSimilarMovies = id => {
+const getSimilarMovies = (category, id) => {
     return dispatch => {
         dispatch(getSimilarMoviesStart());
-        axios.get(`/movie/${id}/similar?api_key=${API}&language=en-US&page=1`)
+        axios.get(`/${category}/${id}/similar?api_key=${API}&language=en-US&page=1`)
             .then(response => {
                 dispatch(getSimilarMoviesSuccess(response.data));
             })

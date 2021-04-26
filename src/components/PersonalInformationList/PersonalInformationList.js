@@ -8,9 +8,9 @@ const personalInformationList = props => (
         <div className='Personal-Info-List-Container'>
             {
                 props.data.map((item, index) => (
-                    <div onClick={() => props.clicked(item.id)} className='Personal-Information-List'>
+                    <div onClick={() => props.clicked(item.title ? 'movie': 'tv', item.id)} className='Personal-Information-List'>
                         <p className='Personal-Information-List-Name'>
-                            <span className='list-number'>{index + 1}.</span> {item.title}{item.character ? <span>as {item.character}
+                            <span className='list-number'>{index + 1}.</span> {item.title ?? item.name}{item.character ? <span>as {item.character}
                             </span>:null}
                         </p>
                         <p className='Personal-Information-Average'><i className='fas fa-star'/> {item.vote_average}</p>

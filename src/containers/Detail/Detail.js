@@ -24,9 +24,9 @@ class Detail extends Component {
     };
     goGenre = () => this.props.history.push('/genre');
 
-    changeMovieDetail = id => {
-        this.props.onGetMovieDetail(this.state.type, id);
-        this.props.onGetSimilarMovies(id);
+    changeMovieDetail = (type, id) => {
+        this.props.onGetMovieDetail(type, id);
+        this.props.onGetSimilarMovies(type, id);
         this.props.onGetPersonalInformation(id);
     };
     render() {
@@ -179,8 +179,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return{
         onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id)),
-        onGetMovieDetail: movie_id => dispatch(actions.getMovieDetail(movie_id)),
-        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id))
+        onGetMovieDetail:(category, movie_id) => dispatch(actions.getMovieDetail(category, movie_id)),
+        onGetSimilarMovies:(category, movie_id) => dispatch(actions.getSimilarMovies(category, movie_id))
     };
 };
 

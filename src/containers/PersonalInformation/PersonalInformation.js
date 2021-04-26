@@ -12,10 +12,10 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 
 class PersonalInformation extends Component{
-    goDetail = id => {
-        this.props.onGetMovieDetail(id);
-        this.props.onGetSimilarMovies(id);
-        this.props.history.push('/detail')
+    goDetail = (type, id) => {
+        this.props.onGetMovieDetail(type, id);
+        this.props.onGetSimilarMovies(type, id);
+        this.props.history.push('/detail', {type})
     };
     render(){
         const personalData = this.props.personalData?.[0].personalInfo;
@@ -36,7 +36,7 @@ class PersonalInformation extends Component{
                                     <p className='Person-Name'>{personalData.name}<span className='Person-Job'>({personalData.known_for_department})</span></p>
                                     <p className='Person-Birthday'>{personalData.birthday}</p>
                                     <div>
-                                        <p className='Person-Title'>Biography</p>
+                                        <p className='Person-Title'>Biography {personalData.id}</p>
                                         <p className='Person-Info'>
                                             {personalData.biography}
                                         </p>
@@ -106,18 +106,45 @@ class PersonalInformation extends Component{
                                 </div>
                             </div>
                             <div className='Personal-Information-Bottom'>
-                                { this.props.movieCredits.cast?.length ? <PersonalInfoList
-                                    count={this.props.movieCredits.cast.length}
-                                    title='Cast'
-                                    data={this.props.movieCredits.cast}
-                                    clicked={this.goDetail}
-                                />:null}
-                                { this.props.movieCredits.crew?.length ? <PersonalInfoList
-                                    count={this.props.movieCredits.crew.length}
-                                    title='Crew'
-                                    data={this.props.movieCredits.crew}
-                                    clicked={this.goDetail}
-                                />:null}
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active person-tab-title" data-toggle="tab" href="#movie">Movie</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link person-tab-title" data-toggle="tab" href="#tv">Tv Show</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div id="movie" class="container tab-pane active">
+                                        { this.props.movieCredits.cast?.length ? <PersonalInfoList
+                                            count={this.props.movieCredits.cast.length}
+                                            title='Cast'
+                                            data={this.props.movieCredits.cast}
+                                            clicked={this.goDetail}
+                                        />:null}
+                                        { this.props.movieCredits.crew?.length ? <PersonalInfoList
+                                            count={this.props.movieCredits.crew.length}
+                                            title='Crew'
+                                            data={this.props.movieCredits.crew}
+                                            clicked={this.goDetail}
+                                        />:null}
+                                    </div>
+                                    <div id="tv" class="container tab-pane fade">
+                                        { this.props.TVCredits?.cast?.length ? <PersonalInfoList
+                                            count={this.props.TVCredits.cast.length}
+                                            title='Cast'
+                                            data={this.props.TVCredits.cast}
+                                            clicked={this.goDetail}
+                                        />:null}
+                                        { this.props.TVCredits?.crew?.length ? <PersonalInfoList
+                                            count={this.props.TVCredits.crew.length}
+                                            title='Crew'
+                                            data={this.props.TVCredits.crew}
+                                            clicked={this.goDetail}
+                                        />:null}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         :<Spinner/>
@@ -137,8 +164,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetMovieDetail: id => dispatch(actions.getMovieDetail(id)),
-        onGetSimilarMovies: id => dispatch(actions.getSimilarMovies(id))
+        onGetMovieDetail: (category, id) => dispatch(actions.getMovieDetail(category, id)),
+        onGetSimilarMovies: (category, id) => dispatch(actions.getSimilarMovies(category, id))
     };
 };
 

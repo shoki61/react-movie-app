@@ -15,7 +15,7 @@ class Home extends Component{
     
     goDetail = (type, id) => {
         this.props.onGetMovieDetail(type, id);
-        this.props.onGetSimilarMovies(id);
+        this.props.onGetSimilarMovies(type, id);
         this.props.history.push('/detail', {type:'movie'})
     };
 
@@ -58,7 +58,7 @@ const mapDispatchToProps = dispatch => {
     return{
         onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value)),
         onGetMovieDetail: (type, movie_id) => dispatch(actions.getMovieDetail(type, movie_id)),
-        onGetSimilarMovies: movie_id => dispatch(actions.getSimilarMovies(movie_id)),
+        onGetSimilarMovies: (category, movie_id) => dispatch(actions.getSimilarMovies(category, movie_id)),
         onGetMostPopular: () => dispatch(actions.extractMostPopular())
     };
 };
