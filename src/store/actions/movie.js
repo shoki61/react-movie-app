@@ -153,10 +153,19 @@ const getSimilarMovies = (category, id) => {
     };
 };
 
+const getMovieByGenre = genreId => {
+    return dispatch => {
+        axios.get(`/discover/movie?api_key=${API}&with_genres=${genreId}`)
+        .then(response => dispatch(getMovies(response.data)))
+        .catch(error => error)
+    };
+};
+
 
 export {
     getMovies,
     extractMostPopular,
     getMovieDetail,
-    getSimilarMovies
+    getSimilarMovies,
+    getMovieByGenre
 };

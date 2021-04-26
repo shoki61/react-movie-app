@@ -2,7 +2,8 @@ export {
     getMovies,
     extractMostPopular,
     getMovieDetail,
-    getSimilarMovies
+    getSimilarMovies,
+    getMovieByGenre
 } from './movie';
 
 export {

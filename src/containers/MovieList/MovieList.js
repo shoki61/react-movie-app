@@ -24,7 +24,7 @@ class MovieList extends Component{
     };
     render(){
         this.movieType = this.props.match.params[0];
-        const title = this.props.match.params[0].replace(/[^a-z|]/g, ' ');
+        const title = this.props.match.params[0].replace(/[^a-zA-Z|]/g, ' ');
         return(
             <div className='movie-list'>
                 <MovieItem
