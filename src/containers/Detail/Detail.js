@@ -27,7 +27,6 @@ class Detail extends Component {
         this.props.onGetSimilarMovies(id);
         this.props.onGetPersonalInformation(id);
     };
-
     render() {
         const { type } = this.props.history.location.state;
         return (
@@ -74,17 +73,17 @@ class Detail extends Component {
                                         </div>
                                         <div>
                                             <p className='Detail-Title'>Budged</p>
-                                            <p className='Detail-Info'>${this.props.movieDetail.budget}</p>
+                                            <p className='Detail-Info'>${this.props.movieDetail.budget ?? 0}</p>
                                         </div>
                                         <div>
                                             <p className='Detail-Title'>Revenue</p>
-                                            <p className='Detail-Info'>${this.props.movieDetail.revenue}</p>
+                                            <p className='Detail-Info'>${this.props.movieDetail.revenue ?? 0}</p>
                                         </div>
                                     </div>
                                     <div>
                                         <p className='Detail-Title'>{type === 'movie' ? 'Director' : 'Creator'}</p>
                                         <p className='Detail-Info'>
-                                            {this.props.credits.crew.find(item => item.job === 'Director' || item.known_for_department==='Writing' && item.department === 'Production' && item.job === 'Executive Producer').name}
+                                            {type === 'movie' ? this.props.credits.crew.find(item => item.job === 'Director')?.name : this.props.movieDetail?.created_by?.[0]?.name ?? 'Unknown'}
                                         </p>
                                     </div>
                                     {
