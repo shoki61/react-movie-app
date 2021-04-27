@@ -8,7 +8,6 @@
 
 ::placeholder{
     letter-spacing: 0;
-
     text-transform: none;
 }
 
@@ -18,6 +17,7 @@
     border-right: none;
     color: #4d4d4d;
     width: 275px;
+    font-size: 14px;
     padding: 0 15px;
     border-radius: 100px 0 0 100px;
     box-sizing: border-box;

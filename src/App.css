@@ -7,3 +7,6 @@ p{
   transition: all .3s ease-in-out;
 }
 
+button:focus{
+  outline:none !important
+}
