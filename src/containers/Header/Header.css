@@ -15,6 +15,7 @@
 .Header-Left-Container{
     display: flex;
     align-items: center;
+    width: 65%;
     height: 100%;
 }
 
@@ -23,3 +24,13 @@
     align-items: center;
 }
 
+.Header-Form{
+    display:flex;
+    align-items:center;
+    width:100%;
+    border-radius: 100px;
+}
+
+.Header-Form:hover{
+    box-shadow: 1px 1px 3px #cacaca;
+}

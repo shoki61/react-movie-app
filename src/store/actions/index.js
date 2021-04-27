@@ -4,7 +4,7 @@ export {
     getMovieDetail,
     getSimilarMovies,
     getMoviesByGenre,
-    getSearch
+    getSearchResult
 } from './movie';
 
 export {
