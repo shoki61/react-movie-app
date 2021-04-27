@@ -165,11 +165,27 @@ const getMoviesByGenre = (genreId, page) => {
     };
 };
 
+const setSearchResult = data => {
+    return {
+        type: actionTypes.SEARCH_RESULT,
+        result: data
+    };
+};
+
+const getSearch = (value, page) => {
+    return dispatch => {
+        axios.get(`/search/multi?api_key=${API}&language=en-US&query=${value}&page=${page}`)
+            .then(response => dispatch(setSearchResult(response.data)))
+            .catch(error => error);
+    };
+};
+
 
 export {
     getMovies,
     extractMostPopular,
     getMovieDetail,
     getSimilarMovies,
-    getMoviesByGenre
+    getMoviesByGenre,
+    getSearch
 };

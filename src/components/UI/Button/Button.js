@@ -4,6 +4,7 @@ import './Button.css';
 
 const button = props => (
     <button
+        type={props.type}
         onClick={props.clicked}
         className={['Button',props.btnType].join(' ')}>
         { props.children }

@@ -24,15 +24,15 @@ class Header extends Component{
                 <div className='Header-Left-Container'>
                     <Logo/>
                     <Navigations getMovies={this.getMovies} getMovieByGenre={this.getMoviesByGenre}/>
-                    <div style={{display:'flex',alignItems:'center'}}>
+                    <form style={{display:'flex',alignItems:'center'}}>
                         <Input inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
-                        <Button btnType='Search-Button'>
+                        <Button type='submit' btnType='Search-Button'>
                             <IoIosSearch/>
                         </Button>
-                    </div>
+                    </form>
                 </div>
                 <div className='Header-Right-Container'>
-                    <Link margin={20} title='Github Repository' size={23}    color='#414141' url='https://github.com/shoki61/react-movie-app'>
+                    <Link margin={20} title='Github Repository' size={23} color='#414141' url='https://github.com/shoki61/react-movie-app'>
                         <FaGithub/>
                     </Link>
                     <Link title='TMDB Website' url='https://www.themoviedb.org'>
