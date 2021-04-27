@@ -84,6 +84,7 @@ const extractMostPopular = () => {
 
 
 const getMovies = (category, movieType, value) => {
+    console.log(category + movieType + value)
     return dispatch => {
         dispatch(getMoviesStart());
         axios.get(`/${category}/${movieType}?api_key=${API}&language=en-US&page=${value}`)
@@ -153,10 +154,13 @@ const getSimilarMovies = (category, id) => {
     };
 };
 
-const getMovieByGenre = genreId => {
+const getMoviesByGenre = (genreId, page) => {
     return dispatch => {
-        axios.get(`/discover/movie?api_key=${API}&with_genres=${genreId}`)
-        .then(response => dispatch(getMovies(response.data)))
+        axios.get(`/discover/movie?api_key=${API}&with_genres=${genreId}&page=${page}`)
+        .then(response => {
+            console.log(response.data)
+            dispatch(getMoviesSuccess(response.data))
+        })
         .catch(error => error)
     };
 };
@@ -167,5 +171,5 @@ export {
     extractMostPopular,
     getMovieDetail,
     getSimilarMovies,
-    getMovieByGenre
+    getMoviesByGenre
 };

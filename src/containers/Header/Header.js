@@ -15,12 +15,15 @@ class Header extends Component{
     getMovies = (category, movieType) => {
         this.props.onGetMovies(category, movieType, 1);
     };
+    getMoviesByGenre = genreId => {
+        this.props.onGetMoviesByGenre(genreId, 1);
+    };
     render(){
         return(
             <div className='Header'>
                 <div className='Header-Left-Container'>
                     <Logo/>
-                    <Navigations getMovies={this.getMovies}/>
+                    <Navigations getMovies={this.getMovies} getMovieByGenre={this.getMoviesByGenre}/>
                     <div style={{display:'flex',alignItems:'center'}}>
                         <Input inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
                         <Button btnType='Search-Button'>
@@ -43,7 +46,8 @@ class Header extends Component{
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value))
+        onGetMovies: (category, movieType, value) => dispatch(actions.getMovies(category, movieType, value)),
+        onGetMoviesByGenre: (genreId, page) => dispatch(actions.getMoviesByGenre(genreId, page))
     };
 };
 

@@ -8,21 +8,21 @@ import genresData from '../../data/genres.json';
 const navigations = props => (
     <div className='Navigation'>
         <NavigationItem title='Movies'>
-            <NavLink onClick={() => props.getMovies('movie', 'popular')} to='/movies/popular'>Popular</NavLink>
-            <NavLink onClick={() => props.getMovies('movie', 'now_playing')} to='/movies/now_playing'>Now Playing</NavLink>
-            <NavLink onClick={() => props.getMovies('movie', 'upcoming')} to='/movies/upcoming'>Upcoming</NavLink>
-            <NavLink onClick={() => props.getMovies('movie', 'top_rated')} to='/movies/top_rated'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('movie', 'popular')} to={{pathname:'/movies/popular', state:{category:'movie'}}}>Popular</NavLink>
+            <NavLink onClick={() => props.getMovies('movie', 'now_playing')} to={{pathname:'/movies/now_playing', state:{category:'movie'}}}>Now Playing</NavLink>
+            <NavLink onClick={() => props.getMovies('movie', 'upcoming')} to={{pathname:'/movies/upcoming', state:{category:'movie'}}}>Upcoming</NavLink>
+            <NavLink onClick={() => props.getMovies('movie', 'top_rated')} to={{pathname:'/movies/top_rated', state:{category:'movie'}}}>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title="TV">
-            <NavLink onClick={() => props.getMovies('tv', 'popular')} to='/movies/popular-tv'>Popular</NavLink>
-            <NavLink onClick={() => props.getMovies('tv', 'airing_today')} to='/movies/airing-today'>Airing Today</NavLink>
-            <NavLink onClick={() => props.getMovies('tv', 'on_the_air')} to='/movies/on-today'>On Today</NavLink>
-            <NavLink onClick={() => props.getMovies('tv', 'top_rated')} to='/movies/top-rated-tv'>Top Rated</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'popular')} to={{pathname:'/movies/popular', state:{category:'tv'}}}>Popular</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'airing_today')} to={{pathname:'/movies/airing_today', state:{category:'tv'}}}>Airing Today</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'on_the_air')} to={{pathname:'/movies/on_the_air', state:{category:'tv'}}}>On Today</NavLink>
+            <NavLink onClick={() => props.getMovies('tv', 'top_rated')} to={{pathname:'/movies/top_rated', state:{category:'tv'}}}>Top Rated</NavLink>
         </NavigationItem>
         <NavigationItem title='Genres'>
             {
                 genresData.genres.map(genre => (
-                    <NavLink to={`/movies/${genre.name}`} key={genre.id}>{genre.name}</NavLink>
+                    <NavLink onClick={() => props.getMovieByGenre(genre.id)} to={{pathname:`/movies/${genre.name}`, state:{genre:genre.id}}} key={genre.id}>{genre.name}</NavLink>
                 ))
             }
         </NavigationItem>
