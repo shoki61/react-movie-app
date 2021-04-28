@@ -29,6 +29,7 @@ const Header = props => {
         event.preventDefault();
         if(!searchValue) return;
         props.onGetSearchResult(searchValue);
+        history.push('/movies/result');
     };
         return(
             <div className='Header'>

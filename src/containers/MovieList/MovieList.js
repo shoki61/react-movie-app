@@ -23,9 +23,15 @@ class MovieList extends Component{
     }
 
     goDetail = (type, id) => {
-        this.props.onGetMovieDetail(type, id);
-        this.props.onGetSimilarMovies(type, id);
-        this.props.history.push('/detail',{type});
+        console.log(type)
+        if(type === 'person') {
+            this.props.onGetPersonalInformation(id);
+            this.props.history.push('/personal-information');
+        } else{
+            this.props.onGetMovieDetail(type, id);
+            this.props.onGetSimilarMovies(type, id);
+            this.props.history.push('/detail',{type});
+        };
     };
 
     nextPage = () => {
@@ -57,7 +63,8 @@ class MovieList extends Component{
 
 const mapStateToProps = state => {
     return {
-        movies: state.movie.movies
+        movies: state.movie.movies,
+        result: state.movie.searchResult
     };
 };
 
@@ -66,7 +73,8 @@ const mapDispatchToProps = dispatch => {
         onGetMovies: (category, movieType, page) => dispatch(actions.getMovies(category, movieType, page)),
         onGetMovieDetail: (category, id) => dispatch(actions.getMovieDetail(category, id)),
         onGetSimilarMovies: (category, id) => dispatch(actions.getSimilarMovies(category, id)),
-        onGetMoviesByGenre: (id, page) => dispatch(actions.getMoviesByGenre(id, page))
+        onGetMoviesByGenre: (id, page) => dispatch(actions.getMoviesByGenre(id, page)),
+        onGetPersonalInformation: id => dispatch(actions.getPersonalInformation(id))
     };
 };
 

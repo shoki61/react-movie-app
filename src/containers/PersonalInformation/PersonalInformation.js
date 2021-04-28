@@ -51,7 +51,7 @@ class PersonalInformation extends Component{
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Known Credits</p>
-                                        <p className='Person-Info'>{this.props.movieCredits.cast?.length}</p>
+                                        <p className='Person-Info'>{this.props.movieCredits?.cast?.length}</p>
                                     </div>
                                     <div>
                                         <p className='Person-Title'>Links</p>

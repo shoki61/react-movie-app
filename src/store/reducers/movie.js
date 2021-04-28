@@ -8,7 +8,6 @@ const initialState = {
     externalID: null,
     movies:[],
     similarMovies:[],
-    searchResult:[],
     filteredMostPopular:null,
     error:null,
     loading:null
@@ -54,9 +53,6 @@ const reducer = ( state = initialState, action ) => {
             return updateObject(state, {loading:null, similarMovies: action.similarMovies});
         case actionTypes.GET_SIMILAR_MOVIES_FAIL:
             return updateObject(state, {loading:null, error: true});
-
-        case actionTypes.SEARCH_RESULT: 
-            return updateObject(state, {searchResult: action.result});
         default: return state;
     };
 };

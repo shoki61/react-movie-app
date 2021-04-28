@@ -165,18 +165,11 @@ const getMoviesByGenre = (genreId, page) => {
     };
 };
 
-const setSearchResult = data => {
-    console.log(data)
-    return {
-        type: actionTypes.SEARCH_RESULT,
-        result: data
-    };
-};
 
 const getSearchResult = (value, page) => {
     return dispatch => {
         axios.get(`/search/multi?api_key=${API}&language=en-US&query=${value}&page=${page}`)
-            .then(response => dispatch(setSearchResult(response.data)))
+            .then(response => dispatch(getMoviesSuccess(response.data)))
             .catch(error => error);
     };
 };

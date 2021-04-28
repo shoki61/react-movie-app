@@ -5,19 +5,22 @@ import PageButton from '../UI/PageButtons/PageButtons';
 import Spinner from '../UI/Spinner/Spinner';
 import Image from '../UI/Image/Image';
 
-const MovieItem = props => (
-    <div className='Container'>
+const MovieItem = props => {
+    const clickHandler = (value, id) => {
+        props.clicked(value, id);
+    };
+    return (<div className='Container'>
         <p className='Title'>{props.title}</p>
         <div className='List-Container'>
             {props.movieList
                 ? props.movieList.map(item => (
                     <div
                         key={item.id}
-                        onClick={()=> props.clicked(item.title ? 'movie':'tv', item.id)}
+                        onClick={()=> clickHandler(item.title ? 'movie' : item.gender ? 'person': 'tv', item.id)}
                         className='Movie-Container'
                     >
                         <Image
-                            src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+                            src={`https://image.tmdb.org/t/p/w500${item.poster_path ?? item.profile_path}`}
                                  alt='image'
                                  className='Movie-List-Poster'
                         />
@@ -36,7 +39,7 @@ const MovieItem = props => (
             }
         </div>
         {props.page && <PageButton next={props.nextPage} preview={props.previewPage} page={props.page}/>}
-    </div>
-);
+    </div>);
+};
 
 export default MovieItem;

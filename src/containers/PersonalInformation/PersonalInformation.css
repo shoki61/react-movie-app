@@ -77,9 +77,13 @@
 
 .Person-External-Id:hover{
     background-color: #4f4f4f;
-    color:#fff;
     box-shadow: 0 0 5px grey;
 }
+
+.Person-External-Id:hover a {
+    color: #fff
+}
+
 .Personal-Information-Bottom{
     width: 85%;
     margin: 100px auto 20px auto;

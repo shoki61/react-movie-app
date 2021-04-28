@@ -39,7 +39,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    color:#34688f;
+    color:#34688f !important;
     border:1px solid #34688f;
     margin-right:15px;
     cursor: pointer;
@@ -51,6 +51,10 @@
     color:#fff;
     border:1px solid transparent;
     box-shadow: 0 0 5px #5a5a5a;
+}
+
+.External-Id:hover a{
+    color: #fff !important
 }
 
 .Detail-Right{
