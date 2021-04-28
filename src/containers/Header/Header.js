@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import {FaGithub} from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import './Header.css';
 import Logo from '../../components/Logo/Logo';
@@ -11,33 +12,31 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import * as actions from '../../store/actions/index';
 
-class Header extends Component{
+const Header = props => {
+    const history = useHistory();
+    const [searchValue, setSearchValue] = useState('');
+    
 
-    state = {
-        searchValue: ''
-    };
+    const inputHandler = event => setSearchValue(event.target.value);
 
-    inputHandler = event => this.setState({searchValue: event.target.value});
-
-    getMovies = (category, movieType) => {
-        this.props.onGetMovies(category, movieType, 1);
+    const getMovies = (category, movieType) => {
+        props.onGetMovies(category, movieType, 1);
     };
-    getMoviesByGenre = genreId => {
-        this.props.onGetMoviesByGenre(genreId, 1);
+    const getMoviesByGenre = genreId => {
+        props.onGetMoviesByGenre(genreId, 1);
     };
-    getSearchResult = event => {
+    const getSearchResult = event => {
         event.preventDefault();
-        console.log(this.state.searchValue)
-        if(this.state.searchValue) this.props.onGetSearchResult(this.state.searchValue);
+        if(!searchValue) return;
+        props.onGetSearchResult(searchValue);
     };
-    render(){
         return(
             <div className='Header'>
                 <div className='Header-Left-Container'>
                     <Logo/>
-                    <Navigations getMovies={this.getMovies} getMovieByGenre={this.getMoviesByGenre}/>
-                    <form onSubmit={this.getSearchResult} className='Header-Form'>
-                        <Input changed={this.inputHandler} inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
+                    <Navigations getMovies={getMovies} getMovieByGenre={getMoviesByGenre}/>
+                    <form onSubmit={getSearchResult} className='Header-Form'>
+                        <Input changed={inputHandler} value={searchValue} inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
                         <Button type='submit' btnType='Search-Button'>
                             <IoIosSearch/>
                         </Button>
@@ -53,7 +52,6 @@ class Header extends Component{
                 </div>
             </div>
         );
-    };
 };
 
 const mapDispatchToProps = dispatch => {
