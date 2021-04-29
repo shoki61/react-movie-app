@@ -1,0 +1,20 @@
+.Container {
+    width: 100%;
+    margin: auto;
+}
+
+.List-Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Title{
+    font-family: "Gill Sans","Gill Sans MT","Trebuchet MS",sans-serif;
+    font-size: 25px;
+    color: #696969;
+    text-align: left;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+

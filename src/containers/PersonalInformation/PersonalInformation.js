@@ -117,13 +117,13 @@ class PersonalInformation extends Component{
 
                                 <div class="tab-content">
                                     <div id="movie" class="container tab-pane active">
-                                        { this.props.movieCredits.cast?.length ? <PersonalInfoList
+                                        { this.props.movieCredits?.cast?.length ? <PersonalInfoList
                                             count={this.props.movieCredits.cast.length}
                                             title='Cast'
                                             data={this.props.movieCredits.cast}
                                             clicked={this.goDetail}
                                         />:null}
-                                        { this.props.movieCredits.crew?.length ? <PersonalInfoList
+                                        { this.props.movieCredits?.crew?.length ? <PersonalInfoList
                                             count={this.props.movieCredits.crew.length}
                                             title='Crew'
                                             data={this.props.movieCredits.crew}

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 import './MovieList.css';
-import MovieItem from '../../components/MovieItem/MovieItem';
+import MovieItem from '../../components/MovieItems/MovieItems';
 import * as actions from '../../store/actions/index';
 
 class MovieList extends Component{

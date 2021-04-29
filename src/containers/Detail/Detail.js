@@ -10,7 +10,7 @@ import Image from '../../components/UI/Image/Image';
 import Link from '../../components/UI/Link/Link';
 import languagesData from '../../data/languages.json';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import MovieItem from '../../components/MovieItem/MovieItem';
+import MovieItems from '../../components/MovieItems/MovieItems';
 import * as actions from '../../store/actions/index';
 import PersonList from './PersonList/PersonList';
 
@@ -152,7 +152,7 @@ class Detail extends Component {
                             </div>
                             { this.props.similarMovies.results?.length &&
                                 <div style={{width: '80%', margin:'auto'}}>
-                                    <MovieItem
+                                    <MovieItems
                                         movieList={this.props.similarMovies.results}
                                         title='Similar'
                                         clicked={this.changeMovieDetail}

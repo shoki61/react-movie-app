@@ -24,7 +24,7 @@
 .Person-Name{
     font-size: 30px;
     color: #3b3b3b;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 .Person-Job{
@@ -35,16 +35,17 @@
 
 .Person-Birthday{
     color: #95a6b9;
-    font-family: "Montserrat SemiBold",sans-serif;
+    font-family: Montserrat ,sans-serif;
     font-size: 13px;
     padding:7px 0 0 7px;
 }
 
 .Person-Title{
-    font-family: "Montserrat SemiBold", sans-serif;
+    font-family: Montserrat, sans-serif;
     font-size: 16px;
     margin: 18px 0 2px 0;
-    color: #606060
+    color: #555;
+    font-weight: 600;
 }
 
 .Person-Info{

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './Home.css';
 import Slide from '../../components/UI/Slide/Slide';
-import MovieItem from '../../components/MovieItem/MovieItem';
+import MovieItems from '../../components/MovieItems/MovieItems';
 import * as actions from '../../store/actions/index';
 
 class Home extends Component{
@@ -32,7 +32,7 @@ class Home extends Component{
                         clicked={this.goDetail}/>
                 </div>
                 <div style={{width:'70%',margin:'auto'}}>
-                    <MovieItem
+                    <MovieItems
                         movieList={this.props.movies.results}
                         page={this.props.movies.page}
                         title='Popular'
