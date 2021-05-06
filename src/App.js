@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-
+// yorum ekledim
 
 import './App.css';
 import Header from "./containers/Header/Header";
@@ -8,7 +8,7 @@ import Home from './containers/Home/Home';
 import Detail from './containers/Detail/Detail';
 import PersonalInformation from "./containers/PersonalInformation/PersonalInformation";
 import MovieList from "./containers/MovieList/MovieList";
-
+// birşeyi değiştirdim
 class App extends  Component{
     render(){
         return (
