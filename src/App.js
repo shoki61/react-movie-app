@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-
+// yorum ekledim
 
 import './App.css';
 import Header from "./containers/Header/Header";
