@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import BackToTop from 'react-custom-back-to-top-button';
 
 
 import './App.css';
@@ -18,6 +19,7 @@ class App extends  Component{
                 <Route path='/detail' component={Detail}/>
                 <Route path='/personal-information' component={PersonalInformation}/>
                 <Route path='/movies/*' component={MovieList}/>
+                <BackToTop/>
             </div>
         );
     };
