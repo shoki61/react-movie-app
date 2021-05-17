@@ -24,7 +24,7 @@ const MovieItem = props => {
                     <p className='Movie-Vote-Average'>{vote_average}</p>
                 </div>
             </div>
-            <p className='Movie-Title'>{title ?? name}{id}</p>
+            <p className='Movie-Title'>{title ?? name}</p>
         </div>
     );
 };

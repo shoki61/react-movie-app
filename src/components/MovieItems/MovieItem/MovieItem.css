@@ -65,5 +65,8 @@
     }
     .Movie-Title{
         font-size: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
     }
 }
