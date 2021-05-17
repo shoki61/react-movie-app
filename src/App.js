@@ -17,7 +17,7 @@ class App extends  Component{
                 <Route path='/detail' component={Detail}/>
                 <Route path='/personal-information' component={PersonalInformation}/>
                 <Route path='/movies/*' component={MovieList}/>
-                <BackToTop/>
+                <BackToTop className='back-to-top'/>
             </div>
         );
     };

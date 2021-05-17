@@ -10,3 +10,11 @@ p{
 button:focus{
   outline:none !important
 }
+
+
+@media (max-width: 600px) {
+  .back-to-top{
+    right: 10px !important;
+    bottom:10px !important
+  }
+}
