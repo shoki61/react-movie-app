@@ -27,7 +27,7 @@
 .Header-Form{
     display:flex;
     align-items:center;
-    width:100%;
+    width:300px;
     border-radius: 100px;
 }
 
@@ -42,12 +42,12 @@
 .header-menu{
     font-size: 25px;
     color:#555;
-    display: none;
+    display: none !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
     .Header-Right-Container{
-        display: none;
+        display: none !important;
     }
     .form-container{
         display:none

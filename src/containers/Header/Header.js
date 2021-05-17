@@ -31,31 +31,31 @@ const Header = props => {
         props.onGetSearchResult(searchValue);
         history.push('/movies/result');
     };
-        return(
-            <div className='Header'>
-                <div className='Header-Left-Container'>
-                    <Logo/>
-                    <div className='form-container'>
-                        <Navigations getMovies={getMovies} getMovieByGenre={getMoviesByGenre}/>
-                        <form onSubmit={getSearchResult} className='Header-Form'>
-                            <Input changed={inputHandler} value={searchValue} inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
-                            <Button type='submit' btnType='Search-Button'>
-                                <IoIosSearch/>
-                            </Button>
-                        </form>
-                    </div>
+    return(
+        <div className='Header'>
+            <div className='Header-Left-Container'>
+                <Logo/>
+                <div className='form-container'>
+                    <Navigations getMovies={getMovies} getMovieByGenre={getMoviesByGenre}/>
+                    <form onSubmit={getSearchResult} className='Header-Form'>
+                        <Input changed={inputHandler} value={searchValue} inputType='Search-Input' placeholder='Search for a movie, tv show, person...'/>
+                        <Button type='submit' btnType='Search-Button'>
+                            <IoIosSearch/>
+                        </Button>
+                    </form>
                 </div>
-                <div className='Header-Right-Container'>
-                    <Link margin={20} title='Github Repository' size={23} color='#414141' url='https://github.com/shoki61/react-movie-app'>
-                        <FaGithub/>
-                    </Link>
-                    <Link title='TMDB Website' url='https://www.themoviedb.org'>
-                        <img height='20' src={require('../../assets/referenceLogo.png').default} alt='TMDB'/>
-                    </Link>
-                </div>
-                <Button btnType='header-menu'><i class="fas fa-bars"></i></Button>
             </div>
-        );
+            <div className='Header-Right-Container'>
+                <Link margin={20} title='Github Repository' size={23} color='#414141' url='https://github.com/shoki61/react-movie-app'>
+                    <FaGithub/>
+                </Link>
+                <Link title='TMDB Website' url='https://www.themoviedb.org'>
+                    <img height='20' src={require('../../assets/referenceLogo.png').default} alt='TMDB'/>
+                </Link>
+            </div>
+            <Button btnType='header-menu'><i class="fas fa-bars"></i></Button>
+        </div>
+    );
 };
 
 const mapDispatchToProps = dispatch => {

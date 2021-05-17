@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-<<<<<<< HEAD
 import BackToTop from 'react-custom-back-to-top-button';
-
-=======
-// yorum ekledim
->>>>>>> 6f13707f195edd3dc71749454f7f1fe0ec8b507c
 
 import './App.css';
 import Header from "./containers/Header/Header";
@@ -29,3 +24,14 @@ class App extends  Component{
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
