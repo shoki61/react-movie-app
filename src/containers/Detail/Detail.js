@@ -63,12 +63,12 @@ class Detail extends Component {
                                         }
                                     </ul>
                                     <div>
-                                        <p className='Detail-Title'>Overview {this.props.movieDetail.id}</p>
+                                        <p className='Detail-Title'>Overview</p>
                                         <p className='Detail-Overview'>
                                             {this.props.movieDetail.overview}
                                         </p>
                                     </div>
-                                    <div style={{display:'flex',width:'50%',justifyContent:'space-between'}}>
+                                    <div className='movie-budget-container'>
                                         <div>
                                             <p className='Detail-Title'>Original Language</p>
                                             <p className='Detail-Info'>{languagesData.languages.filter(item => item.iso_639_1 === this.props.movieDetail.original_language)[0].english_name}</p>
@@ -82,7 +82,7 @@ class Detail extends Component {
                                             <p className='Detail-Info'>${this.props.movieDetail.revenue ?? 0}</p>
                                         </div>}
                                     </div>
-                                    <div>
+                                    <div className='director-container'>
                                         <p className='Detail-Title'>{type === 'movie' ? 'Director' : 'Creator'}</p>
                                         <p className='Detail-Info'>
                                             {type === 'movie' ? this.props.credits.crew.find(item => item.job === 'Director')?.name : this.props.movieDetail?.created_by?.[0]?.name ?? 'Unknown'}
@@ -151,10 +151,10 @@ class Detail extends Component {
                                 {this.props.credits.crew?.length && <PersonList clicked={this.goPersonalInformation} title='Crew' data={this.props.credits.crew}/>}
                             </div>
                             { this.props.similarMovies.results?.length &&
-                                <div style={{width: '80%', margin:'auto'}}>
+                                <div className='similar-movies-container'>
                                     <MovieItems
                                         movieList={this.props.similarMovies.results}
-                                        title='Similar'
+                                        title={`Similar ${type === ''}`}
                                         clicked={this.changeMovieDetail}
                                     />
                                 </div>
