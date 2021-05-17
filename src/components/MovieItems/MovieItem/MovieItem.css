@@ -53,3 +53,17 @@
 .Movie-Container:hover p{
     color:#fff
 }
+
+@media (max-width: 600px){
+    .Movie-Container{
+        width: 125px;
+        margin:7px
+    }
+    .Movie-List-Poster{
+        width: 125px;
+        height: 196px;
+    }
+    .Movie-Title{
+        font-size: 10px;
+    }
+}

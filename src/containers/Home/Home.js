@@ -31,7 +31,7 @@ class Home extends Component{
                         filteredPopular={this.props.filteredPopular}
                         clicked={this.goDetail}/>
                 </div>
-                <div style={{width:'70%',margin:'auto'}}>
+                <div className='home-movies'>
                     <MovieItems
                         movieList={this.props.movies.results}
                         page={this.props.movies.page}
