@@ -7,9 +7,6 @@
     height: 100%;
     display:flex;
 }
-.Most-Popular .nav{
-    margin: 15px!important;
-}
 
 .Content-Left{
     width: 40%;
@@ -41,6 +38,10 @@
     margin: 10px 0 5px 0;
     font-family: 'Amaranth', sans-serif;
     letter-spacing: 1px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
 }
 
 .Vote-Container{
@@ -109,5 +110,32 @@
     list-style: none;
     padding:0;
     margin-top: 25px;
+}
+
+@media (max-width: 1055px) {
+    .Opacity{
+        padding: 15px;
+    }
+    .Content{
+        height: 250px;
+    }
+    .Poster-Image{
+        width: 130px;
+        height: 195px;
+        min-width: 130px;
+        margin-right: 10px;
+    }
+    .Movie-Name{
+        font-weight: normal;
+        font-size: 18px;
+        -webkit-line-clamp: 1;
+    }
+    .Overview{
+        -webkit-line-clamp: 3;
+        width: 100%;
+    }
+    .Content-Right ul{
+        display: none;
+    }
 }
 
